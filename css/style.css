@@ -1,0 +1,58 @@
+html {
+    background-color: #a5d4db;
+    font-family: 'Varela Round', sans-serif !important;
+}
+body{
+    width: 1024px;
+    margin: auto;
+    background-color: #a5d4db;
+}
+header {
+   margin: 20px;
+    display: flex;
+    justify-content: center;
+    /* background-color: gray; */
+}
+
+header h1 {
+    /* background-color: antiquewhite; */
+    font-weight: bold;
+    color: #556671;
+    font-family: 'Varela Round', sans-serif !important;
+    font-size: 80px;
+}
+
+.grid {
+	display: grid;
+}
+
+.grid-auto-flow-1 {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 15px;
+    text-align: center;
+    width: 1024px;
+}
+
+.item {   
+    font-family: 'Varela Round', sans-serif !important;
+    display: grid;
+    border: solid 3px #556671;
+    border-radius: 5px;
+	margin: 15px;
+	/* background: tomato; */
+	text-align: center;
+    font-size: 1.2em;
+    max-height: 200px;
+    transition: background-color .7s;
+    align-items: center;    
+    color: #222222;
+    height: 80px;
+
+}
+
+.item:hover {
+    background-color: #9bbabe;
+    cursor: pointer;
+}
