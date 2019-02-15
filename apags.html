@@ -16,19 +16,45 @@
 
 <body>
     <header>
-            <h1 id="HagaUm">Banners</h1>
+        <h1 id="HagaUm">Banners</h1>
     </header>
 
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <div id="butAtua" class="item"><span>ATUALIZAÇÃO</span></div>
+                <div class="item">
+                    <div class="selectdiv">
+                        <select class="selecitem" name="stores" id="storeso" onchange="enabFie">
+                            <option value="SELECIONELOJA">LOJA</option>
+                            <option value="netshoes">NETSHOES</option>
+                            <option value="netshoesar">NETSHOES AR</option>
+                            <option value="netshoesmx">NETSHOES MX</option>
+                            <option value="zattini">ZATTINI</option>
+                            <option value="shoestock">SHOESTOCK</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="col-sm">
-                <div id="butProg" class="item"><span>PROGRAMAÇÃO</span></div>
+                <div class="item">
+                    <div class="selectdiv">
+                        <select class="selecitem" name="devices" id="deviceso" disabled>
+                            <option value="SELECIONEDEVICE">DEVICE</option>
+                            <option value="desktop">DESKTOP</option>
+                            <option value="mobile">MOBILE</option>
+                            <option value="app">APP</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="col-sm">
-                <div id="butEditp" class="item"><span>EDITAR PROGRAMAÇÃO</span></div>
+                <div class="item">
+                    <div class="selectdiv">
+                        <select class="selecitem" name="bannereses" id="bannereseso" disabled>
+                            <option value="FORMATO">FORMATO</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -50,7 +76,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

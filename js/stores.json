@@ -1,0 +1,17 @@
+{
+    "netshoes": {
+        "storeid": "L_NETSHOES"
+    },
+    "zattini": {
+        "storeid": "L_ZATTINI"
+    },
+    "netshoesar": {
+        "storeid": "L_NETSHOESAR"
+    },
+    "netshoesmx": {
+        "storeid": "L_NETSHOESMX"
+    },
+    "shoestock": {
+        "storeid": "L_SHOESTOCK"
+    }
+}
