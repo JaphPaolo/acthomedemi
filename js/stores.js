@@ -1,21 +1,26 @@
 infoStores = {
-    "atuForma": "<div class='col-sm'> <div class='item'> <div class='selectdiv'> <select class='selecitem' name='stores' id='storeso'> <option value='SELECIONELOJA'>LOJA</option> <option value='netshoes'>NETSHOES</option> <option value='netshoesar'>NETSHOES AR</option> <option value='netshoesmx'>NETSHOES MX</option> <option value='zattini'>ZATTINI</option> <option value='shoestock'>SHOESTOCK</option> </select> </div></div></div><div class='col-sm'> <div class='item'> <div class='selectdiv'> <select class='selecitem' name='devices' id='deviceso' disabled> <option value='SELECIONEDEVICE'>DEVICE</option> <option value='desktop'>DESKTOP</option> <option value='mobile'>MOBILE</option> <option value='app'>APP</option> </select> </div></div></div><div class='col-sm'> <div class='item'> <div class='selectdiv'> <select class='selecitem' name='bannereses' id='bannereseso' disabled> <option value='FORMATO'>FORMATO</option> </select> </div></div></div>",
+    "atuForma": "<div class='col-sm'> <div class='item'> <div class='selectdiv'> <select class='selecitem' name='stores' id='storeso'> <option value='SELECIONELOJA'>LOJA</option> <option value='netshoes'>NETSHOES</option> <option value='netshoesar'>NETSHOES AR</option> <option value='netshoesmx'>NETSHOES MX</option> <option value='zattini'>ZATTINI</option> <option value='shoestock'>SHOESTOCK</option> </select> </div></div></div><div class='col-sm'> <div class='item'> <div class='selectdiv'> <select class='selecitem' name='devices' id='deviceso' disabled> <option value='SELECIONEDEVICE'>DEVICE</option> <option value='desktop'>DESKTOP</option> <option value='mobile'>MOBILE</option> <option value='app'>APP</option><option value='promoapp'>PROMOAPP</option> </select> </div></div></div><div class='col-sm'> <div class='item'> <div class='selectdiv'> <select class='selecitem' name='bannereses' id='bannereseso' disabled> <option value='FORMATO'>FORMATO</option> </select> </div></div></div>",
     "netshoes": {
-        "storeid": "L_NETSHOES",        
+        "storeid": "L_NETSHOES",
         "banners": {
             "desktop": {
-                "bnForm":"<option value='FORMATO'>FORMATO</option> <option value='full1'>FULL1</option> <option value='full2'>FULL2</option> <option value='full3'>FULL3</option> <option value='deal1'>DEAL1</option> <option value='deal2'>DEAL2</option> <option value='deal3'>DEAL3</option> <option value='deal4'>DEAL4</option> <option value='trio1'>TRIO2</option> <option value='trio2'>TRIO3</option> <option value='trio3'>TRIO4</option> <option value='categorias'>CATEGORIAS</option> <option value='trio4'>TRIO4</option> <option value='trio5'>TRIO5</option> <option value='trio6'>TRIO6</option> <option value='marcas'>MARCAS</option> <option value='horizontal'>HORIZONTAL</option> <option value='trio7'>TRIO7</option> <option value='trio8'>TRIO8</option> <option value='trio9'>TRIO9</option> <option value='trjhome'>TARJA TOP HOME</option> <option value='trjlista'>TARJA TOP LISTA</option> <option value='trjpdp'>TARJA TOP PDP</option> <option value='headerb'>HEADER BANNER</option>",
+                "bnForm": "<option value='FORMATO'>FORMATO</option> <option value='full1'>FULL1</option> <option value='full2'>FULL2</option> <option value='full3'>FULL3</option> <option value='deal1'>DEAL1</option> <option value='deal2'>DEAL2</option> <option value='deal3'>DEAL3</option> <option value='deal4'>DEAL4</option> <option value='trio1'>TRIO2</option> <option value='trio2'>TRIO3</option> <option value='trio3'>TRIO4</option> <option value='categorias'>CATEGORIAS</option> <option value='trio4'>TRIO4</option> <option value='trio5'>TRIO5</option> <option value='trio6'>TRIO6</option> <option value='marcas'>MARCAS</option> <option value='horizontal'>HORIZONTAL</option> <option value='trio7'>TRIO7</option> <option value='trio8'>TRIO8</option> <option value='trio9'>TRIO9</option> <option value='trjhome'>TARJA TOP HOME</option> <option value='trjlista'>TARJA TOP LISTA</option> <option value='trjpdp'>TARJA TOP PDP</option> <option value='headerb'>HEADER BANNER</option>",
             },
-            "mobile": {},
-            "app": {}
+            "mobile": {
+                "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1a'>FULL1A</option><option value='full1b'>FULL1B</option><option value='full1c'>FULL1C</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='full2a'>FULL2A</option><option value='full2b'>FULL2B</option><option value='full2c'>FULL2C</option><option value='full3a'>FULL3A</option><option value='full3b'>FULL3B</option><option value='full3c'>FULL3C</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='marcas'>MARCAS</option>"
+            },
+            "app": {
+                "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>"
+            },
+            "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>" }
         }
     },
     "zattini": {
         "storeid": "L_ZATTINI",
-        "bnForm":{},
+        "bnForm": {},
         "banners": {
             "desktop": {
-                "bnForm":"<option value='FORMATO'>FORMATO</option> <option value='full1'>FULL1</option> <option value='full2'>FULL2</option> <option value='full3'>FULL3</option> <option value='deal1'>DEAL1</option> <option value='deal2'>DEAL2</option> <option value='deal3'>DEAL3</option> <option value='deal4'>DEAL4</option> <option value='trio1'>TRIO2</option> <option value='trio2'>TRIO3</option> <option value='trio3'>TRIO4</option> <option value='categorias'>CATEGORIAS</option> <option value='trio4'>TRIO4</option> <option value='trio5'>TRIO5</option> <option value='trio6'>TRIO6</option> <option value='marcas'>MARCAS</option> <option value='horizontal'>HORIZONTAL</option> <option value='trio7'>TRIO7</option> <option value='trio8'>TRIO8</option> <option value='trio9'>TRIO9</option> <option value='trjhome'>TARJA TOP HOME</option> <option value='trjlista'>TARJA TOP LISTA</option> <option value='trjpdp'>TARJA TOP PDP</option> <option value='headerb'>HEADER BANNER</option>",
+                "bnForm": "<option value='FORMATO'>FORMATO</option> <option value='full1'>FULL1</option> <option value='full2'>FULL2</option> <option value='full3'>FULL3</option> <option value='deal1'>DEAL1</option> <option value='deal2'>DEAL2</option> <option value='deal3'>DEAL3</option> <option value='deal4'>DEAL4</option> <option value='trio1'>TRIO2</option> <option value='trio2'>TRIO3</option> <option value='trio3'>TRIO4</option> <option value='categorias'>CATEGORIAS</option> <option value='trio4'>TRIO4</option> <option value='trio5'>TRIO5</option> <option value='trio6'>TRIO6</option> <option value='marcas'>MARCAS</option> <option value='horizontal'>HORIZONTAL</option> <option value='trio7'>TRIO7</option> <option value='trio8'>TRIO8</option> <option value='trio9'>TRIO9</option> <option value='trjhome'>TARJA TOP HOME</option> <option value='trjlista'>TARJA TOP LISTA</option> <option value='trjpdp'>TARJA TOP PDP</option> <option value='headerb'>HEADER BANNER</option>",
             },
             "mobile": {},
             "app": {}
@@ -23,7 +28,7 @@ infoStores = {
     },
     "netshoesar": {
         "storeid": "L_NETSHOESAR",
-        "bnForm":{},
+        "bnForm": {},
         "banners": {
             "desktop": {},
             "mobile": {},
@@ -32,7 +37,7 @@ infoStores = {
     },
     "netshoesmx": {
         "storeid": "L_NETSHOESMX",
-        "bnForm":{},
+        "bnForm": {},
         "banners": {
             "desktop": {},
             "mobile": {},
@@ -41,7 +46,7 @@ infoStores = {
     },
     "shoestock": {
         "storeid": "L_SHOESTOCK",
-        "bnForm":{},
+        "bnForm": {},
         "banners": {
             "desktop": {},
             "mobile": {},

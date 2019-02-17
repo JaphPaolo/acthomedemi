@@ -116,3 +116,25 @@ header h1 {
   .selectdiv select:disabled {
     background-color: #a5d4db;
   }
+
+  figure {
+      margin-top: 50px;
+      border: 5px solid white;
+      width: 1024px;
+  }
+  figure img {
+      width: 1015px;
+      max-width: 1014px;
+  }
+
+  .acampBut {
+      
+      width: 1024px;
+  }
+  .inputP {
+      width: 1024px;
+  }
+  .buttonsss{
+      display: flex;
+      justify-content: space-between;
+  }

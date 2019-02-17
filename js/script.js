@@ -58,18 +58,23 @@
         if (storeso.value === "netshoes" && deviceso.value === "desktop") {bannereseso.innerHTML = infoStores.netshoes.banners.desktop.bnForm}
         if (storeso.value === "netshoes" && deviceso.value === "mobile") {bannereseso.innerHTML = infoStores.netshoes.banners.mobile.bnForm}
         if (storeso.value === "netshoes" && deviceso.value === "app") {bannereseso.innerHTML = infoStores.netshoes.banners.app.bnForm}
+        if (storeso.value === "netshoes" && deviceso.value === "promoapp") {bannereseso.innerHTML = infoStores.netshoes.banners.promoapp.bnForm}
         if (storeso.value === "netshoesar" && deviceso.value === "desktop") {bannereseso.innerHTML = infoStores.netshoesar.banners.desktop.bnForm}
         if (storeso.value === "netshoesar" && deviceso.value === "mobile") {bannereseso.innerHTML = infoStores.netshoesar.banners.mobile.bnForm}
         if (storeso.value === "netshoesar" && deviceso.value === "app") {bannereseso.innerHTML = infoStores.netshoesar.banners.app.bnForm}
+        if (storeso.value === "netshoes" && deviceso.value === "promoapp") {bannereseso.innerHTML = infoStores.netshoes.banners.promoapp.bnForm}
         if (storeso.value === "netshoesmx" && deviceso.value === "desktop") {bannereseso.innerHTML = infoStores.netshoesmx.banners.desktop.bnForm}
         if (storeso.value === "netshoesmx" && deviceso.value === "mobile") {bannereseso.innerHTML = infoStores.netshoesmx.banners.mobile.bnForm}
         if (storeso.value === "netshoesmx" && deviceso.value === "app") {bannereseso.innerHTML = infoStores.netshoesmx.banners.app.bnForm}
+        if (storeso.value === "netshoes" && deviceso.value === "promoapp") {bannereseso.innerHTML = infoStores.netshoes.banners.promoapp.bnForm}
         if (storeso.value === "zattini" && deviceso.value === "desktop") {bannereseso.innerHTML = infoStores.zattini.banners.desktop.bnForm}
         if (storeso.value === "zattini" && deviceso.value === "mobile") {bannereseso.innerHTML = infoStores.zattini.banners.mobile.bnForm}
         if (storeso.value === "zattini" && deviceso.value === "app") {bannereseso.innerHTML = infoStores.zattini.banners.app.bnForm}
+        if (storeso.value === "netshoes" && deviceso.value === "promoapp") {bannereseso.innerHTML = infoStores.netshoes.banners.promoapp.bnForm}
         if (storeso.value === "shoestock" && deviceso.value === "desktop") {bannereseso.innerHTML = infoStores.shoestock.banners.desktop.bnForm}
         if (storeso.value === "shoestock" && deviceso.value === "mobile") {bannereseso.innerHTML = infoStores.shoestock.banners.demobilesktop.bnForm}
         if (storeso.value === "shoestock" && deviceso.value === "app") {bannereseso.innerHTML = infoStores.shoestock.banners.app.bnForm}
+        if (storeso.value === "netshoes" && deviceso.value === "promoapp") {bannereseso.innerHTML = infoStores.netshoes.banners.promoapp.bnForm}
     }
     
 
