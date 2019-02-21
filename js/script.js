@@ -460,7 +460,7 @@
                 console.log(this.responseText);
                 var logues = JSON.parse(this.responseText)
                 var retorno = document.querySelector(".buttonsss");
-                retorno.innerHTML = "<p>Banner Progrado com Sucesso!</p><br><p>Por favor guarde este id para a manutenção dos banners: </p><br><p>" + logues.uuid + "</p>"
+                retorno.innerHTML = "<p class='pAntesDoUuid'>Banner Programado! Por favor guarde este id para a manutenção dos banners: </p><br><p class='uuidProg'>" + logues.uuid + "</p>"
             }
         });
         xhr.open("POST", "https://prd-ingress.netshoes.io/banner/admin");

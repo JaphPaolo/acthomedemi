@@ -80,3 +80,4 @@ typings/
 .dynamodb/
 
 js/script.js
+js/stores.js

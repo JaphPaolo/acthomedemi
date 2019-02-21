@@ -205,3 +205,13 @@ header h1 {
     display: inline-flex;
     margin-top: 40px;
 }
+
+.pAntesDoUuid{
+    font-size: 15px;
+    font-weight: bold;
+}
+.uuidProg {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
