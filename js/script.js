@@ -1,13 +1,16 @@
-(function (){
+(function () {
     /* Variables */
     var loJa = "";
     var deVice = "";
+    var tipRqu = "";
+    var dieizaumDeProg = {};
     window.objJson = '';
     const atuBu = document.querySelector("#butAtua");
     const reaPr = document.querySelector("#butProg");
     const ediPr = document.querySelector("#butEditp");
     const mainDiv = document.querySelector(".row");
     const headBann = document.querySelector("#HagaUm");
+    var token = Math.random().toString(36).substr(2, 8) + "-" + Math.random().toString(36).substr(2, 4) + "-" + Math.random().toString(36).substr(2, 4) + "-" + Math.random().toString(36).substr(2, 4) + "-" + Math.random().toString(36).substr(2, 12)
 
 
     /* Events */
@@ -27,6 +30,7 @@
 
     /* Functions to load prp pages */
     function loadAtuOld() {
+        tipRqu = "Atualizar"
         mainDiv.innerHTML = infoStores.atuForma;
         var storEso = document.querySelector("#storeso");
         var deviCeso = document.querySelector("#deviceso");
@@ -36,6 +40,7 @@
         bannereSo.addEventListener("change", function () { fazGetModDesk() });
     }
     function loadProgBann() {
+        tipRqu = "Programar"
         mainDiv.innerHTML = infoStores.atuForma;
         var storEso = document.querySelector("#storeso");
         var deviCeso = document.querySelector("#deviceso");
@@ -45,6 +50,7 @@
         bannereSo.addEventListener("change", function () { geraCamposProg() });
     }
     function loadEditProg() {
+        tipRqu = "EditProg"
         alert("tst"); //ainda será feito
     }
     function goHome() {
@@ -64,6 +70,423 @@
     }
 
     function defineFormato() {
+        if (tipRqu === "Atualizar") {
+            return fazFormAtu();
+        }
+        if (tipRqu === "Programar") {
+            return fazFormProg();
+        }
+        if (tipRqu === "EditProg") {
+            return "Tá curioso né? hehehehe, Aguarde, este aind está sendo desenvolvido"
+        }
+
+    }
+
+    function geraCamposProg() {
+        bannereseso.disabled = true;
+        var dJossa = document.querySelector(".jossa");
+        dJossa.classList.remove("escondida");
+        if (bannereseso.value === "fulls123" || bannereseso.value === "full1abc" || bannereseso.value === "full2abc" || bannereseso.value === "full3abc" || bannereseso.value === "deals123") {
+            dJossa.innerHTML = infoStores.deskProgFormaComList
+        } else { dJossa.innerHTML = infoStores.deskProgFormaSemList }
+
+        buttPreProg.addEventListener("click", function () {
+            fazPostProg();     
+        })
+    }
+
+
+    function fazFormProg() {
+        if (storeso.value === "netshoes" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.netshoes.progFormato.desktop }
+        if (storeso.value === "netshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoes.progFormato.mobile }
+        if (storeso.value === "netshoes" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoes.progFormato.app }
+        if (storeso.value === "netshoes" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.netshoes.progFormato.promoapp }
+    }
+
+    function constroiJsontDeskNetshoes() {
+        console.log("Desktop");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            //define o JSON
+            if (bannereseso.value === "fulls123") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.desktop.fulls123;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "trio1" || bannereseso.value === "trio2" || bannereseso.value === "trio3" || bannereseso.value === "trio4" || bannereseso.value === "trio5" || bannereseso.value === "trio6" || bannereseso.value === "trio7" || bannereseso.value === "trio8" || bannereseso.value === "trio9") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.desktop.trios;
+                if (bannereseso.value === "trio1") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-0" }
+                if (bannereseso.value === "trio2") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-1" }
+                if (bannereseso.value === "trio3") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-2" }
+                if (bannereseso.value === "trio4") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-0" }
+                if (bannereseso.value === "trio5") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-1" }
+                if (bannereseso.value === "trio6") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-2" }
+                if (bannereseso.value === "trio7") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-0" }
+                if (bannereseso.value === "trio8") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-1" }
+                if (bannereseso.value === "trio9") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-2" }
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            } else {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.desktop.horizontal;
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+
+            console.log(dieizaumDeProg);
+            dieizaumDeProg.criteria.startDate = dataInicial;
+            dieizaumDeProg.criteria.endDate = dataFinal;
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+
+    }
+
+    function constroiJsontMobNetshoes() {
+        console.log("Mobile");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            //define o JSON
+            if (bannereseso.value === "full1abc") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.mobile.full1abc;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "full2abc") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.mobile.full2abc;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "full3abc") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.mobile.full3abc;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "deals123") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.mobile.deals123;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "Netshoes"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            }
+
+            console.log(dieizaumDeProg);
+            dieizaumDeProg.criteria.startDate = dataInicial;
+            dieizaumDeProg.criteria.endDate = dataFinal;
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+    }
+
+    function constroiJsontAppNetshoes() {
+        console.log("APP");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            if (bannereseso.value === "full1" || bannereseso.value === "full2" || bannereseso.value === "full3" || bannereseso.value === "full4" || bannereseso.value === "full5" || bannereseso.value === "full6") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.app.full;
+                if (bannereseso.value === "full1") { dieizaumDeProg.id = "FullBannerApp1" }
+                if (bannereseso.value === "full2") { dieizaumDeProg.id = "FullBannerApp2" }
+                if (bannereseso.value === "full3") { dieizaumDeProg.id = "FullBannerApp3" }
+                if (bannereseso.value === "full4") { dieizaumDeProg.id = "FullBannerApp4" }
+                if (bannereseso.value === "full5") { dieizaumDeProg.id = "FullBannerApp5" }
+                if (bannereseso.value === "full6") { dieizaumDeProg.id = "FullBannerApp6" }
+
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+            console.log(dieizaumDeProg);
+            dieizaumDeProg.criteria.startDate = dataInicial;
+            dieizaumDeProg.criteria.endDate = dataFinal;
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+    }
+
+    function constroiJsontPromoappNetshoes() {
+        console.log("PROMOAPP");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            if (bannereseso.value === "full1" || bannereseso.value === "full2" || bannereseso.value === "full3" || bannereseso.value === "full4" || bannereseso.value === "full5" || bannereseso.value === "full6") {
+                dieizaumDeProg = infoStores.netshoes.bannersProg.promoapp.full;
+                if (bannereseso.value === "full1") { dieizaumDeProg.id = "FullBannerApp1" }
+                if (bannereseso.value === "full2") { dieizaumDeProg.id = "FullBannerApp2" }
+                if (bannereseso.value === "full3") { dieizaumDeProg.id = "FullBannerApp3" }
+                if (bannereseso.value === "full4") { dieizaumDeProg.id = "FullBannerApp4" }
+                if (bannereseso.value === "full5") { dieizaumDeProg.id = "FullBannerApp5" }
+                if (bannereseso.value === "full6") { dieizaumDeProg.id = "FullBannerApp6" }
+
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+            console.log(dieizaumDeProg);
+            dieizaumDeProg.criteria.startDate = dataInicial;
+            dieizaumDeProg.criteria.endDate = dataFinal;
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+    }
+
+
+    function fazPostProg() {
+        if (deviceso.value === "desktop") { constroiJsontDeskNetshoes(); }
+        if (deviceso.value === "mobile") { constroiJsontMobNetshoes(); }
+        if (deviceso.value === "app") { constroiJsontAppNetshoes(); }
+        if (deviceso.value === "promoapp") { constroiJsontPromoappNetshoes(); }
+        var datlokoa = progjson;
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4 && this.status === 201) {
+                console.log(this.responseText);
+                var logues = JSON.parse(this.responseText)
+                var retorno = document.querySelector(".buttonsss");
+                retorno.innerHTML = "<p>Banner Progrado com Sucesso!</p><br><p>Por favor guarde este id para a manutenção dos banners: </p><br><p>" + logues.uuid + "</p>"
+            }
+        });
+        xhr.open("POST", "https://prd-ingress.netshoes.io/banner/admin");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("Postman-Token", token);
+        xhr.send(datlokoa);
+    }
+
+
+
+
+
+
+
+
+
+    /* ************************ Inicio da parte "Atualização" **************************     
+    ┏━┓┈┈╭━━━━╮┏━┓┈┈
+    ┃╱┃┈┈┃╱╭╮╱┃┃╱┃┈┈
+    ┃╱┗━┓┃╱┃┃╱┃┃╱┗━┓
+    ┃╱╱╱┃┃╱╰╯╱┃┃╱╱╱┃
+    ┗━━━┛╰━━━━╯┗━━━┛  
+    ************************************************************************************** */
+
+    function fazFormAtu() {
         if (storeso.value === "netshoes" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.netshoes.banners.desktop.bnForm }
         if (storeso.value === "netshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoes.banners.mobile.bnForm }
         if (storeso.value === "netshoes" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoes.banners.app.bnForm }
@@ -86,42 +509,11 @@
         if (storeso.value === "shoestock" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.shoestock.banners.promoapp.bnForm }
     }
 
-    function geraCamposProg() {
-        bannereseso.disabled = true;
-        var dJossa = document.querySelector(".jossa");
-        dJossa.classList.remove("escondida");
-        dJossa.innerHTML = infoStores.deskProgForma
-    }
-
-    function geraJsonProg() {
-        
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* ************************ Inicio da parte "Atualização" **************************     
-    ┏━┓┈┈╭━━━━╮┏━┓┈┈
-    ┃╱┃┈┈┃╱╭╮╱┃┃╱┃┈┈
-    ┃╱┗━┓┃╱┃┃╱┃┃╱┗━┓
-    ┃╱╱╱┃┃╱╰╯╱┃┃╱╱╱┃
-    ┗━━━┛╰━━━━╯┗━━━┛  
-    ************************************************************************************** */
     function fazGetModDesk() {
         geraCampos();
         window.objJson = '';
         const botaoPre = document.querySelector("#buttPre");
-    const botaoAtu = document.querySelector("#buttAtu");
+        const botaoAtu = document.querySelector("#buttAtu");
         var data = null;
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -135,9 +527,9 @@
         xhr.open("GET", "https://prd-ingress.netshoes.io/banner/admin/" + defineTudoNessaPorra());
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("Postman-Token", "306b5293-cab9-42c5-a3b6-593d9b07e081");
+        xhr.setRequestHeader("Postman-Token", token);
         xhr.send(data);
-        botaoPre.addEventListener("click", function(){
+        botaoPre.addEventListener("click", function () {
             habilitaAtualiza();
         })
     }
@@ -1088,7 +1480,7 @@
     function habilitaAtualiza() {
         atualizaImagem();
         buttAtu.disabled = false;
-        buttAtu.addEventListener("click", function(){
+        buttAtu.addEventListener("click", function () {
             fazPut();
         })
     }
@@ -1113,38 +1505,39 @@
                 imagem.setAttribute("src", ibagemImg.value)
                 link.setAttribute("href", ibagemUrl.value)
             }
-            atualizaJson();
+        atualizaJson();
     }
 
-    function atualizaJson() { 
-            if (objJson.data.type === "IMAGE_LIST") {
-                objJson.data.images[defNume()].urlImage = ibagemImg.value
-                objJson.data.images[defNume()].urlTarget = ibagemUrl.value
-            }
-            else {
-                objJson.data.urlImage = ibagemImg.value
-                objJson.data.urlTarget = ibagemUrl.value
-            }
+    function atualizaJson() {
+        if (objJson.data.type === "IMAGE_LIST") {
+            objJson.data.images[defNume()].urlImage = ibagemImg.value
+            objJson.data.images[defNume()].urlTarget = ibagemUrl.value
+        }
+        else {
+            objJson.data.urlImage = ibagemImg.value
+            objJson.data.urlTarget = ibagemUrl.value
+        }
     }
 
     function fazPut() {
-        var data = JSON.stringify(objJson);      
+        var data = JSON.stringify(objJson);
         var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;      
+        xhr.withCredentials = true;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4 && this.status === 200) {
                 console.log("Deu certo a PUTA.. digo o PUT Porra!")
-            alert("BANNER ATUALIZADO COM SUCESSO!");
+                alert("BANNER ATUALIZADO COM SUCESSO!");
             }
         });
-        
+
         xhr.open("PUT", "https://prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("Postman-Token", "0304d5b8-9d78-42bd-a299-36e744d8c446");      
+        xhr.setRequestHeader("Postman-Token", token);
         xhr.send(data);
         buttAtu.disabled = true;
     }
+
     /* ************************ Final da parte "Atualização" ************************** 
     
     ░░░░░░░░░░░░░░░░░░░░

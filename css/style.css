@@ -165,7 +165,7 @@ header h1 {
     color: white
 }
 
-#buttAtu:disabled, #buttProg:disabled {
+#buttAtu:disabled, #buttProg:disabled, #buttPreProg:disabled {
     background-color: #84a3b8;
     color: rgb(196, 191, 191);
 }
