@@ -1,4 +1,4 @@
-(function () {
+(function (win) {
     /* Variables */
     var loJa = "";
     var deVice = "";
@@ -51,7 +51,7 @@
     }
     function loadEditProg() {
         tipRqu = "EditProg"
-        alert("tst"); //ainda será feito
+        alert("Curios(x) né.. hahahaha.. em breve esta parte estará pronta!"); //ainda será feito
     }
     function goHome() {
         location.reload();
@@ -1560,4 +1560,4 @@
     ██████▀░░░░▀▀██████▀
     
     */
-})();
+})(window);
