@@ -51,8 +51,174 @@
     }
     function loadEditProg() {
         tipRqu = "EditProg"
-        alert("Curios(x) né.. hahahaha.. em breve esta parte estará pronta!"); //ainda será feito
+        mainDiv.innerHTML = infoStores.editForma;
+        var idBann = document.querySelector("#idDoBanner");
+        var butCons = document.querySelector("#buttEditCons");
+        idBann.addEventListener("change", function(){ consultaBanner()});
+        butCons.addEventListener("click", function(){ defineType() });
     }
+
+    function consultaBanner() {
+        var idBann = document.querySelector("#idDoBanner");
+        var data = null;
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log("DEU CERTO o get PORRA!");
+                objJson = JSON.parse(this.responseText);
+
+            }
+        });
+        xhr.open("GET", "https://prd-ingress.netshoes.io/banner/admin/" + idBann.value);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("Postman-Token", token);
+        xhr.send(data);        
+
+    }
+
+    function defineType() {
+        if (objJson.data.type === "IMAGE_LIST") {
+            definePreencheFormularioComMaisCampos();
+        } 
+    }
+
+    function definePreencheFormularioComMaisCampos() {
+        var noodess = document.querySelector('#outraJossa');
+        noodess.innerHTML = infoStores.deskProgFormaComList;
+        leOJayZon();
+    }
+
+    function leOJayZon() {
+        document.querySelector("#datainicio").value = objJson.criteria.startDate.split("T")[0];
+        document.querySelector("#horainicio").value = objJson.criteria.startDate.split("T")[1].split(":")[0] + ":" + objJson.criteria.startDate.split("T")[1].split(":")[1];
+        document.querySelector("#datafim").value = objJson.criteria.endDate.split("T")[0];
+        document.querySelector("#horafim").value = objJson.criteria.endDate.split("T")[1].split(":")[0] + ":" + objJson.criteria.endDate.split("T")[1].split(":")[1];
+        document.querySelector("#ibagemProgImg1").value = objJson.data.images[0].urlImage;
+        document.querySelector("#ibagemProgUrl1").value = objJson.data.images[0].urlTarget;
+        if (objJson.data.images[1] != undefined){
+        document.querySelector("#ibagemProgImg2").value = objJson.data.images[1].urlImage;
+        document.querySelector("#ibagemProgUrl2").value = objJson.data.images[1].urlTarget;
+        }
+        if (objJson.data.images[2] != undefined){
+        document.querySelector("#ibagemProgImg3").value = objJson.data.images[2].urlImage;
+        document.querySelector("#ibagemProgUrl3").value = objJson.data.images[2].urlTarget;
+    }
+
+        buttPreProg.addEventListener("click", function () {
+            fazPutEditProg();     
+        })
+    }
+
+    function fazPutEditProg() {
+        atualizaJsonDeEdicaoIn();
+        atualizaJsonDeEdicaoFi();
+        
+        console.log("Chegou no put");
+    }
+
+    function atualizaJsonDeEdicaoIn(){
+        console.log("inicio")
+        if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+            var horaCertaHaHaHA = "02";
+            var datinicio = document.getElementById('datainicio').value;
+            var date = new Date(datinicio);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate())
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+        } else
+        if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+            var horaCertaHaHaHA = "01";
+            var datinicio = document.getElementById('datainicio').value;
+            var date = new Date(datinicio);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate())
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+        } else
+        if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+            var horaCertaHaHaHA = "00";
+            var datinicio = document.getElementById('datainicio').value;
+            var date = new Date(datinicio);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate())
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+        } else  {
+            var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+            var datinicio = document.getElementById('datainicio').value;
+            var date = new Date(datinicio);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate() - 1);
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+        }
+        console.log(objJson.criteria.startDate);
+    }
+
+    function atualizaJsonDeEdicaoFi(){
+        console.log("fim")
+        if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+            var horaCertaHaHaHA = "02";
+            var datfim = document.getElementById('datafim').value;
+            var date = new Date(datfim);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate())
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+        } else
+        if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+            var horaCertaHaHaHA = "01";
+            var datfim = document.getElementById('datafim').value;
+            var date = new Date(datfim);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate())
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+        } else
+        if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+            var horaCertaHaHaHA = "00";
+            var datfim = document.getElementById('datafim').value;
+            var date = new Date(datfim);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate())
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+        } else  {
+            var datfim = document.getElementById('datafim').value;
+            var date = new Date(datfim);
+            var newdate = new Date(date); 
+            newdate.setDate(newdate.getUTCDate() - 1);
+            var dd = ("0" + newdate.getUTCDate()).slice(-2);
+            var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+            var y = newdate.getUTCFullYear();
+            objJson.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+        }
+        console.log(objJson.criteria.endDate);
+    }
+
+    // function definePreencheFormularioComMenosCampos() {
+    //     var outronode = document.querySelector('#outraJossa');
+    //     outronode.innerHTML("<p>aaaaaaaa</p>");
+    // }
+
+
     function goHome() {
         location.reload();
     }
@@ -158,7 +324,7 @@
                         }
                     }
                 }
-
+                
             } else if (bannereseso.value === "trio1" || bannereseso.value === "trio2" || bannereseso.value === "trio3" || bannereseso.value === "trio4" || bannereseso.value === "trio5" || bannereseso.value === "trio6" || bannereseso.value === "trio7" || bannereseso.value === "trio8" || bannereseso.value === "trio9") {
                 dieizaumDeProg = infoStores.netshoes.bannersProg.desktop.trios;
                 if (bannereseso.value === "trio1") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-0" }

@@ -78,6 +78,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-js/script.js
-js/stores.js
