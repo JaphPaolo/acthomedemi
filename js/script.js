@@ -1322,22 +1322,22 @@
 
         switch (bann.value) {
             case "full1":
-                return "469f2311-eb29-4f8a-b919-26bea13e435f"
+                return "1a1c0a76-bdee-40d9-aed2-1396a9d44a22"
                 break;
             case "full2":
-                return "9211d8d9-5b25-4091-b473-a4e5d792fc47"
+                return "8cc0b6b2-4494-47aa-8a36-3ef3ad0fc4e7"
                 break;
             case "full3":
-                return "1b21e66d-7bb7-4f89-9369-17d50a4dcc3e"
+                return "18dd95ed-54b0-4716-87c9-28c6214b4eba"
                 break;
             case "full4":
-                return "108ffc67-8c9c-403f-b8fd-df3b70738297"
+                return "b8e06c01-e4e9-47cd-a774-84f394a5f66b"
                 break;
             case "full5":
-                return "cebfd436-4e93-49f0-a54a-0a37907976f9"
+                return "486d1eab-f0eb-40b7-96b7-3a5b5cbe044b"
                 break;
             case "full6":
-                return "40fddc52-e084-40e2-96c7-55bae320b48a"
+                return "e46f639b-92db-40f4-9c76-1fffbc9343cb"
                 break;
 
             default: alert("Erro! Contate a Opec!")
@@ -1499,22 +1499,22 @@
 
         switch (bann.value) {
             case "full1":
-                return "ba5a6e1c-e14e-46c4-ba61-daf6ca676a6a"
+                return "cb22edb0-b0ed-420e-b7c8-852270df52de"
                 break;
             case "full2":
-                return "dec9d9ed-7747-4f2e-8359-c0d6343a7b32"
+                return "a729642f-0791-447e-beb8-93ebda06c64b"
                 break;
             case "full3":
-                return "99ea27fa-547c-4fba-9685-62565a356f8a"
+                return "effc8c73-9273-46f0-8c1f-13d8f5c47cc7"
                 break;
             case "full4":
-                return "935febf2-f58b-4b36-a7ca-ddd2b067e3cb"
+                return "cc0072c7-8e8b-43d3-af3d-e104fabeca74"
                 break;
             case "full5":
-                return "2eecfcb2-7941-4a9f-9481-9278988dcd98"
+                return "4c4af435-92d7-43d8-a930-849b2b22a17d"
                 break;
             case "full6":
-                return "8f0f7b21-bb3c-4f7f-baa9-79a8f0934a43"
+                return "20aff126-ee05-473e-8ed2-eea56def0fdf"
                 break;
 
             default: alert("Erro! Contate a Opec!")
