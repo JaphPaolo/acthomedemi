@@ -1349,22 +1349,22 @@
 
         switch (bann.value) {
             case "full1":
-                return "4956c7b9-643e-42a4-acdd-77841f9190d2"
+                return "632fc42a-a49b-467b-9889-01ca1c2b3be5"
                 break;
             case "full2":
-                return "abcd5d4a-1f8c-4cc5-9361-9f8bdea9195b"
+                return "44b3ab5f-e9c0-4880-92be-a2a10e7f7512"
                 break;
             case "full3":
-                return "64f7124f-585f-4e4f-9c2d-c5076484fb1c"
+                return "ffeb1f08-31ea-4e3b-92e8-13e4dc183496"
                 break;
             case "full4":
-                return "4cbd917d-1b24-415d-86bc-195b03f243a4"
+                return "92cb06cf-0c3e-4a2c-8979-91b2dcd199f2"
                 break;
             case "full5":
-                return "5656d992-ebbc-49f3-b1d4-71148ebbb43a"
+                return "8c6bbddb-28a2-4ee2-ae03-494683211e04"
                 break;
             case "full6":
-                return "49395f49-7f68-4ff5-b082-1b354a9419b6"
+                return "6ee89a5e-4944-49d1-a657-78fdfc5b7c99"
                 break;
 
             default: alert("Erro! Contate a Opec!")
