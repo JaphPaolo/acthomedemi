@@ -78,6 +78,7 @@ function fazOPut() {
                 sellerDoSelo.push(Object.keys(jsonPut.promotion.criteria.sellerParents)[i])
             };
             console.log("PROMOÇÃO ATUALIZADA");
+            fazPutDosSelos();
         } else if (this.readyState === 4 && this.status === 200) {
             alert("Combo atualizado")
             for (var i = 0; i < Object.values(jsonPut.promotion.criteria.sellerParents).length; i++) {
@@ -89,6 +90,7 @@ function fazOPut() {
                 sellerDoSelo.push(Object.keys(jsonPut.promotion.criteria.sellerParents)[i])
             };
             console.log("PROMOÇÃO ATUALIZADA");
+            fazPutDosSelos()
         }
 
     });
