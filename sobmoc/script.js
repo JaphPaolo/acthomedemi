@@ -38,7 +38,7 @@ function fazOGet() {
 
         }
     });
-    xhr.open("GET", "https://az-br-prd-free-campaign-1.netshoes.io:8080/api/secure/store/" + selLojas.value + "/promotions/" + drlCombo.value);
+    xhr.open("GET", "http://az-br-prd-free-campaign-1.netshoes.io:8080/api/secure/store/" + selLojas.value + "/promotions/" + drlCombo.value);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.setRequestHeader("Postman-Token", token);
@@ -95,7 +95,7 @@ function fazOPut() {
 
     });
 
-    xhr.open("PUT", "https://az-br-prd-free-campaign-1.netshoes.io:8080/api/secure/store/" + selLojas.value + "/promotions/" + drlCombo.value);
+    xhr.open("PUT", "http://az-br-prd-free-campaign-1.netshoes.io:8080/api/secure/store/" + selLojas.value + "/promotions/" + drlCombo.value);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.setRequestHeader("Postman-Token", token);
@@ -201,7 +201,7 @@ function fazGetDosSelos() {
         }
     });
 
-    xhr.open("GET", "https://az-br-prd-free-campaign-1.netshoes.io:8080/admin/stamp/" + retornaSelos());
+    xhr.open("GET", "http://az-br-prd-free-campaign-1.netshoes.io:8080/admin/stamp/" + retornaSelos());
     xhr.setRequestHeader("storeId", selLojas.value);
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.setRequestHeader("Postman-Token", token);
@@ -225,7 +225,7 @@ function fazPutDosSelos() {
         }
     });
 
-    xhr.open("PUT", "https://az-br-prd-free-campaign-1.netshoes.io:8080/admin/stamp/" + retornaSelos());
+    xhr.open("PUT", "http://az-br-prd-free-campaign-1.netshoes.io:8080/admin/stamp/" + retornaSelos());
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("storeId", selLojas.value);
     xhr.setRequestHeader("cache-control", "no-cache");
