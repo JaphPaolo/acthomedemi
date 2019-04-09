@@ -80,7 +80,10 @@ function fazOPut() {
             console.log("PROMOÇÃO ATUALIZADA");
             fazPutDosSelos();
         } else if (this.readyState === 4 && this.status === 200) {
-            alert("Combo atualizado")
+            
+            jsonPut = JSON.parse(this.responseText);
+            jsonWarnin = JSON.stringify(jsonPut.warnings);
+            
             for (var i = 0; i < Object.values(jsonPut.promotion.criteria.sellerParents).length; i++) {
                 Object.values(jsonPut.promotion.criteria.sellerParents)[i].forEach((e) => {
                     skusDoSelo.push(e)
@@ -222,6 +225,7 @@ function fazPutDosSelos() {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             console.log("SELO ATUALIZADO");
+            alert("Selo e Promo atualizados!")
         }
     });
 
@@ -232,4 +236,8 @@ function fazPutDosSelos() {
     xhr.setRequestHeader("Postman-Token", token);
 
     xhr.send(data);
+}
+
+function reloads(){
+    location.reload();
 }
