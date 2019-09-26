@@ -188,7 +188,159 @@
                     "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>"
                 },
                 "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option><option value='full7'>FULL7</option>" }
-            }
+            },
+            "progFormato": {
+                "desktop": "<option value='FORMATO'>FORMATO</option><option value='fulls123'>FULL1, 2 e 3</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='trio5'>TRIO5</option><option value='trio6'>TRIO6</option><option value='trio7'>TRIO7</option><option value='trio8'>TRIO8</option><option value='trio9'>TRIO9</option><option value='horizontal'>HORIZONTAL</option>",
+                "mobile": "<option value='FORMATO'>FORMATO</option><option value='full1abc'>FULL1A, B e C</option><option value='full2abc'>FULL2A, B e C</option><option value='full3abc'>FULL3A, B e C</option><option value='deals123'>DEAL1, 2 E 3</option>",
+                "app": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
+                "promoapp": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>"
+            },
+            "bannersProg": {
+                "desktop": {
+                    "fulls123": {
+                        "id": "home-gamma-full-top-0",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE_LIST",
+                            "headline": "home-full-top",
+                            "subtitle": "home-full-top",
+                            "images": []
+                        },
+                        "criteria": {
+                            "platform": "DESKTOP",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
+                    "trios": {
+                        "id": "",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "Netshoes"
+                        },
+                        "criteria": {
+                            "platform": "DESKTOP",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
+                    "horizontal": {
+                        "id": "home-gamma-full-buttons-line1",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "Netshoes"
+                        },
+                        "criteria": {
+                            "platform": "DESKTOP"
+                        }
+                    }
+                },
+                "mobile": {
+                    "full1abc": {
+                        "id": "home-gamma-banners-carousel-top",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE_LIST",
+                            "headline": " ",
+                            "subtitle": " ",
+                            "images": []
+                        },
+                        "criteria": {
+                            "platform": "MOBILE",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
+                    "full2abc": {
+                        "id": "home-gamma-banners-carousel-middle",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE_LIST",
+                            "headline": " ",
+                            "subtitle": " ",
+                            "images": []
+                        },
+                        "criteria": {
+                            "platform": "MOBILE",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
+                    "full3abc": {
+                        "id": "home-gamma-banners-carousel-middle-2",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE_LIST",
+                            "headline": " ",
+                            "subtitle": " ",
+                            "images": []
+                        },
+                        "criteria": {
+                            "platform": "MOBILE",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
+                    "deals123": {
+                        "id": "home-gamma-banners-carousel-bottom",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE_LIST",
+                            "headline": " ",
+                            "subtitle": " ",
+                            "images": []
+                        },
+                        "criteria": {
+                            "platform": "MOBILE",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    }
+                },
+                "app": {
+                    "full":{
+                        "id": "",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "ImageAPP"
+                        },
+                        "criteria": {
+                            "platform": "APP",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    }
+                },
+                "promoapp": {
+                    "full":{
+                        "id": "",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "ImageAPP"
+                        },
+                        "criteria": {
+                            "platform": "PROMOAPP",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    }
+                }
+
+            },
+            "maisBann" :"<center> <div class='row espaco'> <div class='divideAsHoras'> <div class='dataHoras'> <div class='col'> <label for='comment' class='ttl'>Data Inicial:</label> <input class='form-control datasPo' type='date' id='datainicio' rows='1'> </div><div class='col'> <label for='comment' class='ttl'>Hora Inicial:</label> <input class='form-control datasPo' type='time' id='datainicio' rows='1'> </div></div><div class='dataHoras'> <div class='col'> <label for='comment' class='ttl'>Data Final:</label> <input class='form-control datasPo' type='date' id='datainicio' rows='1'> </div><div class='col'> <label for='comment' class='ttl'>Hora Final:</label> <input class='form-control datasPo' type='time' id='datafim' rows='1'> </div></div></div></div></center> <div class='acampBut'> <div class='inputsss'> <label for='comment'>Banner 1:</label> <div class='input-group mb-3'> <div class='input-group-prepend'> <span class='input-group-text preInpur' id='basic-addon1'>Img:</span> </div><input class='form-control inputP' id='ibagemProgImg' type='text' placeholder='Imagem'> </div><div class='input-group mb-3'> <div class='input-group-prepend'> <span class='input-group-text preInpur' id='basic-addon1'>Link:</span> </div><input class='form-control inputP' id='ibagemProgUrl' placeholder='Link' type='text'> </div></div><div class='inputsss'> <label for='comment'>Banner 2:</label> <div class='input-group mb-3'> <div class='input-group-prepend'> <span class='input-group-text preInpur' id='basic-addon1'>Img:</span> </div><input class='form-control inputP' id='ibagemProgImg' type='text' placeholder='Imagem'> </div><div class='input-group mb-3'> <div class='input-group-prepend'> <span class='input-group-text preInpur' id='basic-addon1'>Link:</span> </div><input class='form-control inputP' id='ibagemProgUrl' placeholder='Link' type='text'> </div></div><div class='inputsss'> <label for='comment'>Banner 3:</label> <div class='input-group mb-3'> <div class='input-group-prepend'> <span class='input-group-text preInpur' id='basic-addon1'>Img:</span> </div><input class='form-control inputP' id='ibagemProgImg' type='text' placeholder='Imagem'> </div><div class='input-group mb-3'> <div class='input-group-prepend'> <span class='input-group-text preInpur' id='basic-addon1'>Link:</span> </div><input class='form-control inputP' id='ibagemProgUrl' placeholder='Link' type='text'> </div></div><div class='buttonsss'><input type='button' id='buttPreProg' value='Pré-Visualizar'><input type='button' id='buttProg' value='Programar' disabled></div></div>"
+
         },
         "netshoesar": {
             "storeid": "L_NETSHOESAR",

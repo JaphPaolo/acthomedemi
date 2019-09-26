@@ -320,6 +320,7 @@
             return fazFormAtu();
         }
         if (tipRqu === "Programar") {
+            console.log('Passou aqui - programar');
             return fazFormProg();
         }
         if (tipRqu === "EditProg") {
@@ -331,6 +332,7 @@
     function geraCamposProg() {
         bannereseso.disabled = true;
         var dJossa = document.querySelector(".jossa");
+        console.log('qualquer cois so pra ver se passou')
         dJossa.classList.remove("escondida");
         if (bannereseso.value === "fulls123" || bannereseso.value === "full1abc" || bannereseso.value === "full2abc" || bannereseso.value === "full3abc" || bannereseso.value === "deals123") {
             dJossa.innerHTML = infoStores.deskProgFormaComList
@@ -347,6 +349,10 @@
         if (storeso.value === "netshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoes.progFormato.mobile }
         if (storeso.value === "netshoes" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoes.progFormato.app }
         if (storeso.value === "netshoes" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.netshoes.progFormato.promoapp }
+        if (storeso.value === "zattini" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.zattini.progFormato.desktop }
+        if (storeso.value === "zattini" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.zattini.progFormato.mobile }
+        if (storeso.value === "zattini" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.zattini.progFormato.app }
+        if (storeso.value === "zattini" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.zattini.progFormato.promoapp }
     }
 
     function constroiJsontDeskNetshoes() {
@@ -1044,11 +1050,712 @@
     }
 
 
+    function constroiJsontDeskZattini() {
+        console.log("Desktop");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            //define o JSON
+            if (bannereseso.value === "fulls123") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.desktop.fulls123;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+                
+            } else if (bannereseso.value === "trio1" || bannereseso.value === "trio2" || bannereseso.value === "trio3" || bannereseso.value === "trio4" || bannereseso.value === "trio5" || bannereseso.value === "trio6" || bannereseso.value === "trio7" || bannereseso.value === "trio8" || bannereseso.value === "trio9") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.desktop.trios;
+                if (bannereseso.value === "trio1") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-0" }
+                if (bannereseso.value === "trio2") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-1" }
+                if (bannereseso.value === "trio3") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-2" }
+                if (bannereseso.value === "trio4") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-0" }
+                if (bannereseso.value === "trio5") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-1" }
+                if (bannereseso.value === "trio6") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-2" }
+                if (bannereseso.value === "trio7") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-0" }
+                if (bannereseso.value === "trio8") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-1" }
+                if (bannereseso.value === "trio9") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-2" }
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            } else {
+                dieizaumDeProg = infoStores.zattini.bannersProg.desktop.horizontal;
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+
+            console.log(dieizaumDeProg);
+
+            //data inicio
+            if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            }
+
+            //data Fim
+            if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else  {
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+            }
+
+
+
+
+
+
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+
+    }
+
+    function constroiJsontMobZattini() {
+        console.log("Mobile");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            //define o JSON
+            if (bannereseso.value === "full1abc") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full1abc;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "full2abc") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full2abc;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "full3abc") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full3abc;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            } else if (bannereseso.value === "deals123") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.deals123;
+                var storageBanner1 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner2 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                var storageBanner3 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.urlImage = ibagemProgImg1.value;
+                    storageBanner1.urlTarget = ibagemProgUrl1.value;
+                    dieizaumDeProg.data.images.push(storageBanner1);
+                    if (ibagemProgImg2.value !== "") {
+                        storageBanner2.urlImage = ibagemProgImg2.value;
+                        storageBanner2.urlTarget = ibagemProgUrl2.value;
+                        dieizaumDeProg.data.images.push(storageBanner2);
+                        if (ibagemProgImg3.value !== "") {
+                            storageBanner3.urlImage = ibagemProgImg3.value;
+                            storageBanner3.urlTarget = ibagemProgUrl3.value;
+                            dieizaumDeProg.data.images.push(storageBanner3);
+                        }
+                    }
+                }
+
+            }
+
+            console.log(dieizaumDeProg);
+            //data inicio
+            if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            }
+
+            //data Fim
+            if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else  {
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+            }
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+    }
+
+    function constroiJsontAppZattini() {
+        console.log("APP");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            if (bannereseso.value === "full1" || bannereseso.value === "full2" || bannereseso.value === "full3" || bannereseso.value === "full4" || bannereseso.value === "full5" || bannereseso.value === "full6") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.app.full;
+                if (bannereseso.value === "full1") { dieizaumDeProg.id = "FullBannerApp1" }
+                if (bannereseso.value === "full2") { dieizaumDeProg.id = "FullBannerApp2" }
+                if (bannereseso.value === "full3") { dieizaumDeProg.id = "FullBannerApp3" }
+                if (bannereseso.value === "full4") { dieizaumDeProg.id = "FullBannerApp4" }
+                if (bannereseso.value === "full5") { dieizaumDeProg.id = "FullBannerApp5" }
+                if (bannereseso.value === "full6") { dieizaumDeProg.id = "FullBannerApp6" }
+
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+            console.log(dieizaumDeProg);
+            //data inicio
+            if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            }
+
+            //data Fim
+            if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else  {
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+            }
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+    }
+
+    function constroiJsontPromoappZattini() {
+        console.log("PROMOAPP");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            if (bannereseso.value === "full1" || bannereseso.value === "full2" || bannereseso.value === "full3" || bannereseso.value === "full4" || bannereseso.value === "full5" || bannereseso.value === "full6") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.promoapp.full;
+                if (bannereseso.value === "full1") { dieizaumDeProg.id = "FullBannerApp1" }
+                if (bannereseso.value === "full2") { dieizaumDeProg.id = "FullBannerApp2" }
+                if (bannereseso.value === "full3") { dieizaumDeProg.id = "FullBannerApp3" }
+                if (bannereseso.value === "full4") { dieizaumDeProg.id = "FullBannerApp4" }
+                if (bannereseso.value === "full5") { dieizaumDeProg.id = "FullBannerApp5" }
+                if (bannereseso.value === "full6") { dieizaumDeProg.id = "FullBannerApp6" }
+
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+            console.log(dieizaumDeProg);
+            //data inicio
+            if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            }
+
+            //data Fim
+            if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else  {
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+            }
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+        }
+    }
+
+
     function fazPostProg() {
-        if (deviceso.value === "desktop") { constroiJsontDeskNetshoes(); }
-        if (deviceso.value === "mobile") { constroiJsontMobNetshoes(); }
-        if (deviceso.value === "app") { constroiJsontAppNetshoes(); }
-        if (deviceso.value === "promoapp") { constroiJsontPromoappNetshoes(); }
+        if (storeso.value === "zattini") {
+            if (deviceso.value === "desktop") { constroiJsontDeskZattini(); }
+            if (deviceso.value === "mobile") { constroiJsontMobZattini(); }
+            if (deviceso.value === "app") { constroiJsontAppZattini(); }
+            if (deviceso.value === "promoapp") { constroiJsontPromoappZattini(); }
+        } else if (storeso.value === "netshoes"){
+            if (deviceso.value === "desktop") { constroiJsontDeskNetshoes(); }
+            if (deviceso.value === "mobile") { constroiJsontMobNetshoes(); }
+            if (deviceso.value === "app") { constroiJsontAppNetshoes(); }
+            if (deviceso.value === "promoapp") { constroiJsontPromoappNetshoes(); }}
         var datlokoa = progjson;
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
