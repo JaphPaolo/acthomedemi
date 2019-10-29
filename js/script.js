@@ -275,31 +275,6 @@
         })
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function goHome() {
         location.reload();
     }
@@ -2238,6 +2213,7 @@
         if (storeso.value === "netshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoes.banners.mobile.bnForm }
         if (storeso.value === "netshoes" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoes.banners.app.bnForm }
         if (storeso.value === "netshoes" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.netshoes.banners.promoapp.bnForm }
+        if (storeso.value === "netshoes" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.netshoes.banners.appblack.bnForm }
         if (storeso.value === "clubenetshoes" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.clubenetshoes.banners.desktop.bnForm }
         if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.clubenetshoes.banners.mobile.bnForm }
         if (storeso.value === "netshoesar" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.netshoesar.banners.desktop.bnForm }
@@ -2302,7 +2278,7 @@
         var imagem = document.querySelector(".ibagem a img")
         var link = document.querySelector(".ibagem a")
 
-        if (deviceso.value === "app" || deviceso.value === "promoapp") {
+        if (deviceso.value === "app" || deviceso.value === "promoapp" || deviceso.value === "appblack") {
             if (storeso.value === "netshoesar" || storeso.value === "netshoesmx") {
                 imagem.setAttribute("src", objJson.data.urlImage)
                 link.setAttribute("href", objJson.data.urlTarget)
@@ -2519,6 +2495,85 @@
             case "full6":
                 return "6ee89a5e-4944-49d1-a657-78fdfc5b7c99"
                 break;
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
+    function defBannerNetshoesAppblack() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "full1":
+                return "352fc1f5-7eda-406c-befc-5816f5ad06f5"
+                break;
+            case "horizontal1":
+                return "b8508a60-d8a0-4755-b071-17dc47f04d5c"
+                break;
+            case "horizontal2":
+                return "c95972f3-8546-4d3f-b554-f9344d2c1f4a"
+                break;
+            case "trio1":
+                return "4499e6bd-5cd2-4de0-9eb9-4fb4a5489311"
+                break;
+            case "trio2":
+                return "83df9d29-c6ce-490d-abb1-cef9a0058a11"
+                break;
+            case "trio3":
+                return "b8ac4cec-2b6b-4821-93ff-5017a639fbe5"
+                break;
+            case "trio4":
+                return "a56639e0-2088-4b27-b3d3-7dd3ac718ec9"
+                break;
+            case "deal1":
+                return "2fdef0fa-b219-4691-8065-77f49199ac3c"
+                break;
+            case "deal2":
+                return "b74888fd-0d60-4ba4-9439-8a4dd4554a0c"
+                break;
+            case "deal3":
+                return "2bb9c3c9-d4e3-4e94-aa5b-48f908a06aba"
+                break;
+            case "deal4":
+                return "3af02071-fb5d-4e9b-86ab-991a435e3339"
+                break;
+            case "horizontal3":
+                return "a93f1585-b062-4b89-a510-d4bf59688595"
+                break;
+            case "trioinferior":
+                return "9738f238-4ee0-496c-9e63-0f8002fcb55d"
+                break;
+            case "trioinferior2":
+                return "404435e3-a154-4714-8b22-3942ca8596f3"
+                break;
+            case "horizontal4":
+                return "34075327-f90a-46c1-b867-d6499ff3e521"
+                break;
+            case "marca1":
+                return "f94efbf8-b40d-4677-b0a2-acb3b5940f30"
+                break;
+            case "marca2":
+                return "d177d39c-0153-46ab-abfb-04652000092e"
+                break;
+            case "marca3":
+                return "3fdaf3aa-1a3f-4369-881a-481e660ce79a"
+                break;
+            case "marca4":
+                return "133d354f-609b-4f1d-980a-cbfc3a1cdafc"
+                break;
+            case "marca5":
+                return "ef17f679-bae8-48f7-913e-a28080fada84"
+                break;
+            case "marca6":
+                return "2e0c893f-5e06-4209-b5b5-c2ed7910485f"
+                break;
+            case "marca7":
+                return "5fd22e88-f5f7-4dc1-861c-76f957c3fb01"
+                break;
+            case "marca8":
+                return "945bc664-5f47-4d78-841e-cb5b25df2134"
+                break;
+
 
             default: alert("Erro! Contate a Opec!")
                 break;
@@ -3308,57 +3363,60 @@
                     if (storeso.value === "netshoes" && deviceso.value === "promoapp") {
                         return defBannerNetshoesPromoapp();
                     } else 
-                        if (storeso.value === "clubenetshoes" && deviceso.value === "desktop") {
-                            return defBannerClubeNetshoesDesk();
-                        } else
-                            if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") {
-                                return defBannerClubeNetshoesMob();
+                        if (storeso.value === "netshoes" && deviceso.value === "appblack") {
+                            return defBannerNetshoesAppblack();
+                        } else 
+                            if (storeso.value === "clubenetshoes" && deviceso.value === "desktop") {
+                                return defBannerClubeNetshoesDesk();
                             } else
-                                if (storeso.value === "zattini" && deviceso.value === "desktop") {
-                                    return defBannerZattiniDesk();
+                                if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") {
+                                    return defBannerClubeNetshoesMob();
                                 } else
-                                    if (storeso.value === "zattini" && deviceso.value === "mobile") {
-                                        return defBannerZattiniMob();
+                                    if (storeso.value === "zattini" && deviceso.value === "desktop") {
+                                        return defBannerZattiniDesk();
                                     } else
-                                        if (storeso.value === "zattini" && deviceso.value === "app") {
-                                            return defBannerZattiniApp();
+                                        if (storeso.value === "zattini" && deviceso.value === "mobile") {
+                                            return defBannerZattiniMob();
                                         } else
-                                            if (storeso.value === "zattini" && deviceso.value === "promoapp") {
-                                                return defBannerZattiniPromoapp();
-                                            } else if (storeso.value === "netshoesar" && deviceso.value === "desktop") {
-                                                return defBannerNetshoesarDesk();
+                                            if (storeso.value === "zattini" && deviceso.value === "app") {
+                                                return defBannerZattiniApp();
                                             } else
-                                                if (storeso.value === "netshoesar" && deviceso.value === "mobile") {
-                                                    return defBannerNetshoesarMob();
+                                                if (storeso.value === "zattini" && deviceso.value === "promoapp") {
+                                                    return defBannerZattiniPromoapp();
+                                                } else if (storeso.value === "netshoesar" && deviceso.value === "desktop") {
+                                                    return defBannerNetshoesarDesk();
                                                 } else
-                                                    if (storeso.value === "netshoesar" && deviceso.value === "app") {
-                                                        return defBannerNetshoesarApp();
+                                                    if (storeso.value === "netshoesar" && deviceso.value === "mobile") {
+                                                        return defBannerNetshoesarMob();
                                                     } else
-                                                        if (storeso.value === "netshoesar" && deviceso.value === "promoapp") {
-                                                            return defBannerNetshoesarPromoapp();
-                                                        } else if (storeso.value === "netshoesmx" && deviceso.value === "desktop") {
-                                                            return defBannerNetshoesmxDesk();
+                                                        if (storeso.value === "netshoesar" && deviceso.value === "app") {
+                                                            return defBannerNetshoesarApp();
                                                         } else
-                                                            if (storeso.value === "netshoesmx" && deviceso.value === "mobile") {
-                                                                return defBannerNetshoesmxMob();
+                                                            if (storeso.value === "netshoesar" && deviceso.value === "promoapp") {
+                                                                return defBannerNetshoesarPromoapp();
+                                                            } else if (storeso.value === "netshoesmx" && deviceso.value === "desktop") {
+                                                                return defBannerNetshoesmxDesk();
                                                             } else
-                                                                if (storeso.value === "netshoesmx" && deviceso.value === "app") {
-                                                                    return defBannerNetshoesmxApp();
+                                                                if (storeso.value === "netshoesmx" && deviceso.value === "mobile") {
+                                                                    return defBannerNetshoesmxMob();
                                                                 } else
-                                                                    if (storeso.value === "netshoesmx" && deviceso.value === "promoapp") {
-                                                                        return defBannerNetshoesmxPromoapp();
-                                                                    } else if (storeso.value === "shoestock" && deviceso.value === "desktop") {
-                                                                        return defBannerShoestockDesk();
+                                                                    if (storeso.value === "netshoesmx" && deviceso.value === "app") {
+                                                                        return defBannerNetshoesmxApp();
                                                                     } else
-                                                                        if (storeso.value === "shoestock" && deviceso.value === "mobile") {
-                                                                            return defBannerShoestockMob();
+                                                                        if (storeso.value === "netshoesmx" && deviceso.value === "promoapp") {
+                                                                            return defBannerNetshoesmxPromoapp();
+                                                                        } else if (storeso.value === "shoestock" && deviceso.value === "desktop") {
+                                                                            return defBannerShoestockDesk();
                                                                         } else
-                                                                            if (storeso.value === "shoestock" && deviceso.value === "app") {
-                                                                                return defBannerShoestockApp();
+                                                                            if (storeso.value === "shoestock" && deviceso.value === "mobile") {
+                                                                                return defBannerShoestockMob();
                                                                             } else
-                                                                                if (storeso.value === "shoestock" && deviceso.value === "promoapp") {
-                                                                                    return defBannerShoestockPromoapp();
-                                                                                }
+                                                                                if (storeso.value === "shoestock" && deviceso.value === "app") {
+                                                                                    return defBannerShoestockApp();
+                                                                                } else
+                                                                                    if (storeso.value === "shoestock" && deviceso.value === "promoapp") {
+                                                                                        return defBannerShoestockPromoapp();
+                                                                                    }
     }
 
     function habilitaAtualiza() {
@@ -3372,7 +3430,7 @@
         var imagem = document.querySelector(".ibagem a img")
         var link = document.querySelector(".ibagem a")
 
-        if (deviceso.value === "app" || deviceso.value === "promoapp") {
+        if (deviceso.value === "app" || deviceso.value === "promoapp" || deviceso.value === "appblack") {
             if (storeso.value === "netshoesar" || storeso.value === "netshoesar") {
                 imagem.setAttribute("src", ibagemImg.value)
                 link.setAttribute("href", ibagemUrl.value)
