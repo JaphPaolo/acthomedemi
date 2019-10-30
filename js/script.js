@@ -3815,73 +3815,73 @@
 
         switch (bann.value) {
             case "full1":
-                return ""
+                return "6193889f-1c1c-4415-a61e-87cec6567965"
                 break;
             case "horizontal1":
-                return ""
+                return "2b704fc5-d004-482a-9163-36a16522e396"
                 break;
             case "horizontal2":
-                return ""
+                return "4c419748-b4cc-48fe-b172-36a39edda9f3"
                 break;
             case "trio1":
-                return ""
+                return "12ffb9c1-fbc4-424d-992f-b7e8a76eaec5"
                 break;
             case "trio2":
-                return ""
+                return "d061b162-f337-4fc6-882e-2c0fe4145fae"
                 break;
             case "trio3":
-                return ""
+                return "6e05b941-ea20-4cfd-8385-5956046c80d7"
                 break;
             case "trio4":
-                return ""
-                break;
-            case "deal1":
-                return ""
-                break;
-            case "deal2":
-                return ""
-                break;
-            case "deal3":
-                return ""
-                break;
-            case "deal4":
-                return ""
+                return "393a374a-97b7-4a28-b16c-df6a513f25d9"
                 break;
             case "horizontal3":
-                return ""
+                return "886e71db-9de5-480b-8688-40fe5e9a73bb"
                 break;
             case "trioinferior":
-                return ""
+                return "cc227148-e5ec-4087-a260-d0afd0146db6"
                 break;
             case "trioinferior2":
-                return ""
+                return "565339a5-5d8d-41ef-88cf-cf71f483a1d5"
                 break;
             case "horizontal4":
-                return ""
+                return "3c0fcb4d-e257-4eb3-b7ed-aec3f7e5ccc4"
+                break;
+            case "deal1":
+                return "b93b241a-a2b2-4c28-9fc6-fb43e3346322"
+                break;
+            case "deal2":
+                return "474eb06c-acb9-4197-92a2-a51153c2e7a8"
+                break;
+            case "deal3":
+                return "f8d6be46-9119-4d85-a555-4874c14afc14"
+                break;
+            case "deal4":
+                return "5d0ab71e-6f88-4aee-bdc6-2af60fb7e6d4"
                 break;
             case "marca1":
-                return ""
+                return "5499b45f-cb69-425d-9dda-0ea77b757b25"
                 break;
             case "marca2":
-                return ""
+                return "df7e1a96-61bc-46ca-bbef-e0bd0bba58b1"
                 break;
             case "marca3":
-                return ""
+                return "a41898fd-3380-4d99-ab9c-0cd8f134bb4e"
                 break;
             case "marca4":
-                return ""
+                return "82676f7b-cf97-44be-a507-48057f00e445"
                 break;
             case "marca5":
-                return ""
+                return "b7245246-c3c8-4e58-ad4b-89641fb3ebda"
                 break;
             case "marca6":
-                return ""
+                return "e322469e-251d-44c7-a023-d1ac1524b0d1"
                 break;
             case "marca7":
-                return ""
+                return "bb099500-ff55-4a4f-ae6c-062c4bcd54a7"
                 break;
             case "marca8":
-                return ""
+                return "7f864bef-5e0f-4426-9c00-9d395f2d5cb4"
                 break;
 
 
