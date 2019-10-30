@@ -493,6 +493,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -500,7 +501,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
 
 
@@ -759,6 +760,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -766,7 +768,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -887,6 +889,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -894,7 +897,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1015,6 +1018,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1022,7 +1026,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1205,6 +1209,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horafim").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1212,7 +1217,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1378,6 +1383,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1385,7 +1391,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
 
 
@@ -1644,6 +1650,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1651,7 +1658,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1772,6 +1779,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1779,7 +1787,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1900,6 +1908,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1907,7 +1916,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1917,7 +1926,7 @@
     }
 
     function constroiJsontAppblackZattini() {
-        console.log("PROMOAPP");
+        console.log("APPBLACK");
         var botaoPre = document.getElementById("buttPreProg");
         if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
             //data inicio
@@ -2090,6 +2099,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -2097,7 +2107,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -2261,6 +2271,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -2268,7 +2279,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
 
 
@@ -2527,6 +2538,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -2534,7 +2546,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
