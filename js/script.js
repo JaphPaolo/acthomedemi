@@ -155,6 +155,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA 1");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         } else
         if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
@@ -166,6 +167,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA 2");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         } else
         if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
@@ -177,6 +179,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA 3");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         } else  {
             var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
@@ -187,6 +190,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA!!!!!");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         }
         console.log(objJson.criteria.startDate);
@@ -1028,7 +1032,7 @@
     }
 
     function constroiJsontAppblackNetshoes() {
-        console.log("PROMOAPP");
+        console.log("APPBLACK");
         var botaoPre = document.getElementById("buttPreProg");
         if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
             //data inicio
@@ -3823,28 +3827,28 @@
             case "horizontal2":
                 return "4c419748-b4cc-48fe-b172-36a39edda9f3"
                 break;
-            case "trio1":
+            case "horizontal3":
                 return "12ffb9c1-fbc4-424d-992f-b7e8a76eaec5"
                 break;
-            case "trio2":
+            case "horizontal4":
                 return "d061b162-f337-4fc6-882e-2c0fe4145fae"
                 break;
-            case "trio3":
+            case "trio1":
                 return "6e05b941-ea20-4cfd-8385-5956046c80d7"
                 break;
-            case "trio4":
+            case "trio2":
                 return "393a374a-97b7-4a28-b16c-df6a513f25d9"
                 break;
-            case "horizontal3":
+            case "trio3":
                 return "886e71db-9de5-480b-8688-40fe5e9a73bb"
                 break;
-            case "trioinferior":
+            case "trio4":
                 return "cc227148-e5ec-4087-a260-d0afd0146db6"
                 break;
-            case "trioinferior2":
+            case "trioinferior":
                 return "565339a5-5d8d-41ef-88cf-cf71f483a1d5"
                 break;
-            case "horizontal4":
+            case "trioinferior2":
                 return "3c0fcb4d-e257-4eb3-b7ed-aec3f7e5ccc4"
                 break;
             case "deal1":
