@@ -155,6 +155,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA 1");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         } else
         if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
@@ -166,6 +167,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA 2");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         } else
         if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
@@ -177,6 +179,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA 3");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         } else  {
             var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
@@ -187,6 +190,7 @@
             var dd = ("0" + newdate.getUTCDate()).slice(-2);
             var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
             var y = newdate.getUTCFullYear();
+            console.log("PASSOU POR AQUI ESSA PORRA!!!!!");
             objJson.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
         }
         console.log(objJson.criteria.startDate);
@@ -325,10 +329,12 @@
         if (storeso.value === "netshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoes.progFormato.mobile }
         if (storeso.value === "netshoes" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoes.progFormato.app }
         if (storeso.value === "netshoes" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.netshoes.progFormato.promoapp }
+        if (storeso.value === "netshoes" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.netshoes.progFormato.appblack }
         if (storeso.value === "zattini" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.zattini.progFormato.desktop }
         if (storeso.value === "zattini" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.zattini.progFormato.mobile }
         if (storeso.value === "zattini" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.zattini.progFormato.app }
         if (storeso.value === "zattini" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.zattini.progFormato.promoapp }
+        if (storeso.value === "zattini" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.zattini.progFormato.appblack }
     }
 
     function constroiJsontDeskNetshoes() {
@@ -487,6 +493,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -494,7 +501,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
 
 
@@ -753,6 +760,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -760,7 +768,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -881,6 +889,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -888,7 +897,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1009,6 +1018,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1016,7 +1026,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1024,6 +1034,197 @@
             botaoPre.disabled = true;
         }
     }
+
+    function constroiJsontAppblackNetshoes() {
+        console.log("APPBLACK");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            if (bannereseso.value === "full1"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.full1;
+                if (bannereseso.value === "full1") { dieizaumDeProg.id = "APP_FULL"; }
+            } else if (bannereseso.value === "full1"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.horizontal1;
+                if (bannereseso.value === "horizontal1") { dieizaumDeProg.id = "APP_HORIZONTAL_1" }
+            } else if (bannereseso.value === "horizontal2"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.horizontal2;
+                if (bannereseso.value === "horizontal2") { dieizaumDeProg.id = "APP_HORIZONTAL_2" }
+            } else if (bannereseso.value === "horizontal3"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.horizontal3;
+                if (bannereseso.value === "horizontal3") { dieizaumDeProg.id = "APP_HORIZONTAL_3" }
+            } else if (bannereseso.value === "horizontal4"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.horizontal4;
+                if (bannereseso.value === "horizontal4") { dieizaumDeProg.id = "APP_HORIZONTAL_4" }
+            } else if (bannereseso.value === "trio1"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.trio1;
+                if (bannereseso.value === "trio1") { dieizaumDeProg.id = "APP_TRIO_1" }
+            } else if (bannereseso.value === "trio2"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.trio2;
+                if (bannereseso.value === "trio2") { dieizaumDeProg.id = "APP_TRIO_2" }
+            } else if (bannereseso.value === "trio3"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.trio3;
+                if (bannereseso.value === "trio3") { dieizaumDeProg.id = "APP_TRIO_3" }
+            } else if (bannereseso.value === "trio4"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.trio4;
+                if (bannereseso.value === "trio4") { dieizaumDeProg.id = "APP_TRIO_4" }
+            } else if (bannereseso.value === "deal1"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.deal1;
+                if (bannereseso.value === "deal1") { dieizaumDeProg.id = "APP_DEAL_1" }
+            } else if (bannereseso.value === "deal2"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.deal2;
+                if (bannereseso.value === "deal2") { dieizaumDeProg.id = "APP_DEAL_2" }
+            } else if (bannereseso.value === "deal3"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.deal3;
+                if (bannereseso.value === "deal3") { dieizaumDeProg.id = "APP_DEAL_3" }
+            } else if (bannereseso.value === "deal4"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.deal4;
+                if (bannereseso.value === "deal4") { dieizaumDeProg.id = "APP_DEAL_4" }
+            } else if (bannereseso.value === "trioinferior"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.trioinferior;
+                if (bannereseso.value === "trioinferior") { dieizaumDeProg.id = "APP_TRIO_INFERIOR" }
+            } else if (bannereseso.value === "trioinferior2"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.trioinferior2;
+                if (bannereseso.value === "trioinferior2") { dieizaumDeProg.id = "APP_TRIO_INFERIOR_2" }
+            } else if (bannereseso.value === "marca1"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marca1;
+                if (bannereseso.value === "marca1") { dieizaumDeProg.id = "APP_MARCAS_1" }
+            } else if (bannereseso.value === "marca2"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marcas2;
+                if (bannereseso.value === "marca2") { dieizaumDeProg.id = "APP_MARCAS_2" }
+            } else if (bannereseso.value === "marca3"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marcas3;
+                if (bannereseso.value === "marca3") { dieizaumDeProg.id = "APP_MARCAS_3" }
+            } else if (bannereseso.value === "marca4"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marcas4;
+                if (bannereseso.value === "marca4") { dieizaumDeProg.id = "APP_MARCAS_4" }
+            } else if (bannereseso.value === "marca5"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marcas5;
+                if (bannereseso.value === "marca5") { dieizaumDeProg.id = "APP_MARCAS_5" }
+            } else if (bannereseso.value === "marca6"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marca6;
+                if (bannereseso.value === "marca6") { dieizaumDeProg.id = "APP_MARCAS_6" }
+            } else if (bannereseso.value === "marca7"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marca7;
+                if (bannereseso.value === "marca7") { dieizaumDeProg.id = "APP_MARCAS_7" }
+            } else if (bannereseso.value === "marca8"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.marca8;
+                if (bannereseso.value === "marca8") { dieizaumDeProg.id = "APP_MARCAS_8" }
+            }                
+
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+            console.log(dieizaumDeProg);
+            //data inicio
+            if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            }
+
+            //data Fim
+            if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horafim").value.split(":")[0]) + 3)).slice(-2);
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            }
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
+    }
+    
 
 
     function constroiJsontDeskZattini() {
@@ -1182,6 +1383,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1189,7 +1391,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
 
 
@@ -1448,6 +1650,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1455,7 +1658,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1576,6 +1779,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1583,7 +1787,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -1704,6 +1908,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1711,13 +1916,203 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
             console.log(progjson);
             botaoPre.disabled = true;
         }
+    }
+
+    function constroiJsontAppblackZattini() {
+        console.log("APPBLACK");
+        var botaoPre = document.getElementById("buttPreProg");
+        if (datainicio.value === "" || horainicio.value === "" || datafim.value === "" || horafim.value === "") { alert("Por favor verificar as datas e a hora dos banners!") } else {
+            //data inicio
+            var dataIni = document.getElementById("datainicio").value
+            var horaIni = document.getElementById("horainicio").value
+            var dataTrat = dataIni.split("/", 3)[0] + "T";
+            var horaTrat = horaIni + ":01";
+            var dataEhoraIni = dataTrat + horaTrat;
+            var dataInicial = dataEhoraIni.toString();
+
+            //datafim
+            var dataFim = document.getElementById("datafim").value
+            var horaFim = document.getElementById("horafim").value
+            var dataTratFim = dataFim.split("/", 3)[0] + "T";
+            var horaTratFim = horaFim + ":01";
+            var dataEhoraFim = dataTratFim + horaTratFim;
+            var dataFinal = dataEhoraFim.toString();
+
+            if (bannereseso.value === "full1"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.full1;
+                if (bannereseso.value === "full1") { dieizaumDeProg.id = "APP_FULL"; }
+            } else if (bannereseso.value === "full1"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.horizontal1;
+                if (bannereseso.value === "horizontal1") { dieizaumDeProg.id = "APP_HORIZONTAL_1" }
+            } else if (bannereseso.value === "horizontal2"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.horizontal2;
+                if (bannereseso.value === "horizontal2") { dieizaumDeProg.id = "APP_HORIZONTAL_2" }
+            } else if (bannereseso.value === "horizontal3"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.horizontal3;
+                if (bannereseso.value === "horizontal3") { dieizaumDeProg.id = "APP_HORIZONTAL_3" }
+            } else if (bannereseso.value === "horizontal4"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.horizontal4;
+                if (bannereseso.value === "horizontal4") { dieizaumDeProg.id = "APP_HORIZONTAL_4" }
+            } else if (bannereseso.value === "trio1"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.trio1;
+                if (bannereseso.value === "trio1") { dieizaumDeProg.id = "APP_TRIO_1" }
+            } else if (bannereseso.value === "trio2"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.trio2;
+                if (bannereseso.value === "trio2") { dieizaumDeProg.id = "APP_TRIO_2" }
+            } else if (bannereseso.value === "trio3"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.trio3;
+                if (bannereseso.value === "trio3") { dieizaumDeProg.id = "APP_TRIO_3" }
+            } else if (bannereseso.value === "trio4"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.trio4;
+                if (bannereseso.value === "trio4") { dieizaumDeProg.id = "APP_TRIO_4" }
+            } else if (bannereseso.value === "deal1"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.deal1;
+                if (bannereseso.value === "deal1") { dieizaumDeProg.id = "APP_DEAL_1" }
+            } else if (bannereseso.value === "deal2"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.deal2;
+                if (bannereseso.value === "deal2") { dieizaumDeProg.id = "APP_DEAL_2" }
+            } else if (bannereseso.value === "deal3"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.deal3;
+                if (bannereseso.value === "deal3") { dieizaumDeProg.id = "APP_DEAL_3" }
+            } else if (bannereseso.value === "deal4"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.deal4;
+                if (bannereseso.value === "deal4") { dieizaumDeProg.id = "APP_DEAL_4" }
+            } else if (bannereseso.value === "trioinferior"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.trioinferior;
+                if (bannereseso.value === "trioinferior") { dieizaumDeProg.id = "APP_TRIO_INFERIOR" }
+            } else if (bannereseso.value === "trioinferior2"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.trioinferior2;
+                if (bannereseso.value === "trioinferior2") { dieizaumDeProg.id = "APP_TRIO_INFERIOR_2" }
+            } else if (bannereseso.value === "marca1"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marca1;
+                if (bannereseso.value === "marca1") { dieizaumDeProg.id = "APP_MARCAS_1" }
+            } else if (bannereseso.value === "marca2"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marcas2;
+                if (bannereseso.value === "marca2") { dieizaumDeProg.id = "APP_MARCAS_2" }
+            } else if (bannereseso.value === "marca3"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marcas3;
+                if (bannereseso.value === "marca3") { dieizaumDeProg.id = "APP_MARCAS_3" }
+            } else if (bannereseso.value === "marca4"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marcas4;
+                if (bannereseso.value === "marca4") { dieizaumDeProg.id = "APP_MARCAS_4" }
+            } else if (bannereseso.value === "marca5"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marcas5;
+                if (bannereseso.value === "marca5") { dieizaumDeProg.id = "APP_MARCAS_5" }
+            } else if (bannereseso.value === "marca6"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marca6;
+                if (bannereseso.value === "marca6") { dieizaumDeProg.id = "APP_MARCAS_6" }
+            } else if (bannereseso.value === "marca7"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marca7;
+                if (bannereseso.value === "marca7") { dieizaumDeProg.id = "APP_MARCAS_7" }
+            } else if (bannereseso.value === "marca8"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.marca8;
+                if (bannereseso.value === "marca8") { dieizaumDeProg.id = "APP_MARCAS_8" }
+            }                
+
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            }
+            console.log(dieizaumDeProg);
+            //data inicio
+            if (document.querySelector("#horainicio").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horainicio").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datinicio = document.getElementById('datainicio').value;
+                var date = new Date(datinicio);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.startDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horainicio").value.split(":")[1] + ":01";
+            }
+
+            //data Fim
+            if (document.querySelector("#horafim").value.split(":")[0] == 23) {
+                var horaCertaHaHaHA = "02";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 22) {
+                var horaCertaHaHaHA = "01";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else
+            if (document.querySelector("#horafim").value.split(":")[0] == 21) {
+                var horaCertaHaHaHA = "00";
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate())
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
+                var datfim = document.getElementById('datafim').value;
+                var date = new Date(datfim);
+                var newdate = new Date(date); 
+                newdate.setDate(newdate.getUTCDate() - 1);
+                var dd = ("0" + newdate.getUTCDate()).slice(-2);
+                var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
+                var y = newdate.getUTCFullYear();
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
+            }
+            console.log(dieizaumDeProg.criteria.startDate);
+            window.progjson = JSON.stringify(dieizaumDeProg);
+            console.log(progjson);
+            botaoPre.disabled = true;
     }
 
     function constroiJsontDeskClubeNS() {
@@ -1876,6 +2271,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -1883,7 +2279,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
 
 
@@ -2142,6 +2538,7 @@
                 var y = newdate.getUTCFullYear();
                 dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             } else  {
+                var horaCertaHaHaHA =  ("0" + (Number(document.querySelector("#horainicio").value.split(":")[0]) + 3)).slice(-2);
                 var datfim = document.getElementById('datafim').value;
                 var date = new Date(datfim);
                 var newdate = new Date(date); 
@@ -2149,7 +2546,7 @@
                 var dd = ("0" + newdate.getUTCDate()).slice(-2);
                 var mm = ("0" + (newdate.getUTCMonth() + 1)).slice(-2);
                 var y = newdate.getUTCFullYear();
-                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + document.querySelector("#horafim").value + ":01";
+                dieizaumDeProg.criteria.endDate = y + '-' + mm + '-' + dd + "T" + horaCertaHaHaHA + ":" + document.querySelector("#horafim").value.split(":")[1] + ":01";
             }
             console.log(dieizaumDeProg.criteria.startDate);
             window.progjson = JSON.stringify(dieizaumDeProg);
@@ -2165,11 +2562,13 @@
             if (deviceso.value === "mobile") { constroiJsontMobZattini(); }
             if (deviceso.value === "app") { constroiJsontAppZattini(); }
             if (deviceso.value === "promoapp") { constroiJsontPromoappZattini(); }
+            if (deviceso.value === "appblack") { constroiJsontAppblackZattini(); }
         } else if (storeso.value === "netshoes"){
             if (deviceso.value === "desktop") { constroiJsontDeskNetshoes(); }
             if (deviceso.value === "mobile") { constroiJsontMobNetshoes(); }
             if (deviceso.value === "app") { constroiJsontAppNetshoes(); }
             if (deviceso.value === "promoapp") { constroiJsontPromoappNetshoes(); }
+            if (deviceso.value === "appblack") { constroiJsontAppblackNetshoes(); }
         } else if (storeso.value === "clubenetshoes"){
             if (deviceso.value === "desktop") { constroiJsontDeskClubeNS(); }
             if (deviceso.value === "mobile") { constroiJsontMobClubeNS(); }
@@ -2228,10 +2627,12 @@
         if (storeso.value === "zattini" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.zattini.banners.mobile.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.zattini.banners.app.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.zattini.banners.promoapp.bnForm }
+        if (storeso.value === "zattini" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.zattini.banners.appblack.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.shoestock.banners.desktop.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.shoestock.banners.mobile.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.shoestock.banners.app.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.shoestock.banners.promoapp.bnForm }
+        if (storeso.value === "shoestock" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.shoestock.banners.appblack.bnForm }
     }
 
     function fazGetModDesk() {
@@ -2887,6 +3288,85 @@
                 break;
         }
     }
+    function defBannerZattiniAppblack() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "full1":
+                return "1aa5b5fe-656e-4033-8c6d-0c75f9d1f1b0"
+                break;
+            case "horizontal1":
+                return "d1c8ce11-c3a3-4d3d-85ad-a2203ef0dc3d"
+                break;
+            case "horizontal2":
+                return "26f36b1a-3e13-4a63-9048-d5386f455fe2"
+                break;
+            case "horizontal3":
+                return "eb2af8fa-6ec7-4b7d-8cee-a41c0ef0fb9d"
+                break;
+            case "horizontal4":
+                return "9c7093e8-1033-4c15-9716-ffd17e5018c5"
+                break;
+            case "trio1":
+                return "fd4afe33-7b64-4c04-be46-c2b8b66b010d"
+                break;
+            case "trio2":
+                return "06b1677a-a5b3-437b-bfbb-db908dbaa708"
+                break;
+            case "trio3":
+                return "7f012225-4b14-4235-ab8c-8f0e0f32fe83"
+                break;
+            case "trio4":
+                return "d601a6d3-71e8-474d-b7ee-9dfecca596dd"
+                break;
+            case "deal1":
+                return "bb713115-143f-4c46-ae9f-d7f4381ec474"
+                break;
+            case "deal2":
+                return "03303976-06ce-4727-acb2-ccb80e87627b"
+                break;
+            case "deal3":
+                return "7930929c-8bc2-4c8e-8570-689abc3128c0"
+                break;
+            case "deal4":
+                return "74f00a45-8a3c-43f7-b7bf-aa4563287abc"
+                break;
+            case "trioinferior":
+                return "b8d7bb84-40b1-4093-9916-21918504207e"
+                break;
+            case "trioinferior2":
+                return "4179c9cb-6140-41cc-a31b-96a06e58befe"
+                break;
+            case "marca1":
+                return "61959052-2410-493b-aeeb-77bee3fca28f"
+                break;
+            case "marca2":
+                return "e2167e03-1d99-4d44-acef-49aa3c96ab68"
+                break;
+            case "marca3":
+                return "1789b3eb-a36f-4aa0-8b31-7142bd8a8d97"
+                break;
+            case "marca4":
+                return "59168bbf-1f35-4b51-96bd-038d00a912fa"
+                break;
+            case "marca5":
+                return "f443045a-c0ab-48e7-8f52-9bd86e9753ce"
+                break;
+            case "marca6":
+                return "408ab2ee-2379-48a7-9379-d3a500558a06"
+                break;
+            case "marca7":
+                return "301b61c4-b8f3-4a45-8c5d-18f63bf68129"
+                break;
+            case "marca8":
+                return "a62d687c-b137-4b26-bd93-ff0ce394eb5b"
+                break;
+
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
 
     //netshoesar
     function defBannerNetshoesarDesk() {
@@ -3346,6 +3826,85 @@
                 break;
         }
     }
+    function defBannerShoestockAppblack() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "full1":
+                return "6193889f-1c1c-4415-a61e-87cec6567965"
+                break;
+            case "horizontal1":
+                return "2b704fc5-d004-482a-9163-36a16522e396"
+                break;
+            case "horizontal2":
+                return "4c419748-b4cc-48fe-b172-36a39edda9f3"
+                break;
+            case "horizontal3":
+                return "12ffb9c1-fbc4-424d-992f-b7e8a76eaec5"
+                break;
+            case "horizontal4":
+                return "d061b162-f337-4fc6-882e-2c0fe4145fae"
+                break;
+            case "trio1":
+                return "6e05b941-ea20-4cfd-8385-5956046c80d7"
+                break;
+            case "trio2":
+                return "393a374a-97b7-4a28-b16c-df6a513f25d9"
+                break;
+            case "trio3":
+                return "886e71db-9de5-480b-8688-40fe5e9a73bb"
+                break;
+            case "trio4":
+                return "cc227148-e5ec-4087-a260-d0afd0146db6"
+                break;
+            case "trioinferior":
+                return "565339a5-5d8d-41ef-88cf-cf71f483a1d5"
+                break;
+            case "trioinferior2":
+                return "3c0fcb4d-e257-4eb3-b7ed-aec3f7e5ccc4"
+                break;
+            case "deal1":
+                return "b93b241a-a2b2-4c28-9fc6-fb43e3346322"
+                break;
+            case "deal2":
+                return "474eb06c-acb9-4197-92a2-a51153c2e7a8"
+                break;
+            case "deal3":
+                return "f8d6be46-9119-4d85-a555-4874c14afc14"
+                break;
+            case "deal4":
+                return "5d0ab71e-6f88-4aee-bdc6-2af60fb7e6d4"
+                break;
+            case "marca1":
+                return "5499b45f-cb69-425d-9dda-0ea77b757b25"
+                break;
+            case "marca2":
+                return "df7e1a96-61bc-46ca-bbef-e0bd0bba58b1"
+                break;
+            case "marca3":
+                return "a41898fd-3380-4d99-ab9c-0cd8f134bb4e"
+                break;
+            case "marca4":
+                return "82676f7b-cf97-44be-a507-48057f00e445"
+                break;
+            case "marca5":
+                return "b7245246-c3c8-4e58-ad4b-89641fb3ebda"
+                break;
+            case "marca6":
+                return "e322469e-251d-44c7-a023-d1ac1524b0d1"
+                break;
+            case "marca7":
+                return "bb099500-ff55-4a4f-ae6c-062c4bcd54a7"
+                break;
+            case "marca8":
+                return "7f864bef-5e0f-4426-9c00-9d395f2d5cb4"
+                break;
+
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
 
 
 
@@ -3353,70 +3912,56 @@
     function defineTudoNessaPorra() {
         if (storeso.value === "netshoes" && deviceso.value === "desktop") {
             return defBannerNetshoesDesk();
-        } else
-            if (storeso.value === "netshoes" && deviceso.value === "mobile") {
+        } else if (storeso.value === "netshoes" && deviceso.value === "mobile") {
                 return defBannerNetshoesMob();
-            } else
-                if (storeso.value === "netshoes" && deviceso.value === "app") {
+            } else if (storeso.value === "netshoes" && deviceso.value === "app") {
                     return defBannerNetshoesApp();
-                } else
-                    if (storeso.value === "netshoes" && deviceso.value === "promoapp") {
+                } else if (storeso.value === "netshoes" && deviceso.value === "promoapp") {
                         return defBannerNetshoesPromoapp();
-                    } else 
-                        if (storeso.value === "netshoes" && deviceso.value === "appblack") {
+                    } else if (storeso.value === "netshoes" && deviceso.value === "appblack") {
                             return defBannerNetshoesAppblack();
-                        } else 
-                            if (storeso.value === "clubenetshoes" && deviceso.value === "desktop") {
+                        } else if (storeso.value === "clubenetshoes" && deviceso.value === "desktop") {
                                 return defBannerClubeNetshoesDesk();
-                            } else
-                                if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") {
+                            } else if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") {
                                     return defBannerClubeNetshoesMob();
-                                } else
-                                    if (storeso.value === "zattini" && deviceso.value === "desktop") {
+                                } else if (storeso.value === "zattini" && deviceso.value === "desktop") {
                                         return defBannerZattiniDesk();
-                                    } else
-                                        if (storeso.value === "zattini" && deviceso.value === "mobile") {
+                                    } else if (storeso.value === "zattini" && deviceso.value === "mobile") {
                                             return defBannerZattiniMob();
-                                        } else
-                                            if (storeso.value === "zattini" && deviceso.value === "app") {
+                                        } else if (storeso.value === "zattini" && deviceso.value === "app") {
                                                 return defBannerZattiniApp();
-                                            } else
-                                                if (storeso.value === "zattini" && deviceso.value === "promoapp") {
+                                            } else if (storeso.value === "zattini" && deviceso.value === "promoapp") {
                                                     return defBannerZattiniPromoapp();
-                                                } else if (storeso.value === "netshoesar" && deviceso.value === "desktop") {
-                                                    return defBannerNetshoesarDesk();
-                                                } else
-                                                    if (storeso.value === "netshoesar" && deviceso.value === "mobile") {
-                                                        return defBannerNetshoesarMob();
-                                                    } else
-                                                        if (storeso.value === "netshoesar" && deviceso.value === "app") {
-                                                            return defBannerNetshoesarApp();
-                                                        } else
-                                                            if (storeso.value === "netshoesar" && deviceso.value === "promoapp") {
-                                                                return defBannerNetshoesarPromoapp();
-                                                            } else if (storeso.value === "netshoesmx" && deviceso.value === "desktop") {
-                                                                return defBannerNetshoesmxDesk();
-                                                            } else
-                                                                if (storeso.value === "netshoesmx" && deviceso.value === "mobile") {
-                                                                    return defBannerNetshoesmxMob();
-                                                                } else
-                                                                    if (storeso.value === "netshoesmx" && deviceso.value === "app") {
-                                                                        return defBannerNetshoesmxApp();
-                                                                    } else
-                                                                        if (storeso.value === "netshoesmx" && deviceso.value === "promoapp") {
-                                                                            return defBannerNetshoesmxPromoapp();
-                                                                        } else if (storeso.value === "shoestock" && deviceso.value === "desktop") {
-                                                                            return defBannerShoestockDesk();
-                                                                        } else
-                                                                            if (storeso.value === "shoestock" && deviceso.value === "mobile") {
-                                                                                return defBannerShoestockMob();
-                                                                            } else
-                                                                                if (storeso.value === "shoestock" && deviceso.value === "app") {
-                                                                                    return defBannerShoestockApp();
-                                                                                } else
-                                                                                    if (storeso.value === "shoestock" && deviceso.value === "promoapp") {
-                                                                                        return defBannerShoestockPromoapp();
-                                                                                    }
+                                                } else if (storeso.value === "zattini" && deviceso.value === "appblack") {
+                                                    return defBannerZattiniAppblack();
+                                                    } else if (storeso.value === "netshoesar" && deviceso.value === "desktop") {
+                                                        return defBannerNetshoesarDesk();
+                                                        } else if (storeso.value === "netshoesar" && deviceso.value === "mobile") {
+                                                                return defBannerNetshoesarMob();
+                                                            } else if (storeso.value === "netshoesar" && deviceso.value === "app") {
+                                                                    return defBannerNetshoesarApp();
+                                                                } else if (storeso.value === "netshoesar" && deviceso.value === "promoapp") {
+                                                                        return defBannerNetshoesarPromoapp();
+                                                                    } else if (storeso.value === "netshoesmx" && deviceso.value === "desktop") {
+                                                                        return defBannerNetshoesmxDesk();
+                                                                    } else if (storeso.value === "netshoesmx" && deviceso.value === "mobile") {
+                                                                            return defBannerNetshoesmxMob();
+                                                                        } else if (storeso.value === "netshoesmx" && deviceso.value === "app") {
+                                                                                return defBannerNetshoesmxApp();
+                                                                            } else if (storeso.value === "netshoesmx" && deviceso.value === "promoapp") {
+                                                                                    return defBannerNetshoesmxPromoapp();
+                                                                                } else if (storeso.value === "shoestock" && deviceso.value === "desktop") {
+                                                                                    return defBannerShoestockDesk();
+                                                                                } else if (storeso.value === "shoestock" && deviceso.value === "mobile") {
+                                                                                        return defBannerShoestockMob();
+                                                                                    } else if (storeso.value === "shoestock" && deviceso.value === "app") {
+                                                                                            return defBannerShoestockApp();
+                                                                                        } else if (storeso.value === "shoestock" && deviceso.value === "promoapp") {
+                                                                                                return defBannerShoestockPromoapp();
+                                                                                            } else if (storeso.value === "shoestock" && deviceso.value === "appblack") {
+                                                                                                return defBannerShoestockAppblack();
+                                                                                            }
+                                                    
     }
 
     function habilitaAtualiza() {
