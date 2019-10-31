@@ -34,15 +34,19 @@ const load = () => {
         habilitaCampoDevice();
     });
     horinicio.addEventListener('change', () => {
-        const datloc = new Date(String(datinicio.value) + "T" + String(horinicio.value) + ":01")
-        const datutc = new Date(datloc.toUTCString())
-        datHorIni = datutc.toISOString().slice(0, 19)
+        if (deviceso.value === 'APP_DAILY_OFFER'){
+            const datloc = new Date(String(datinicio.value) + "T" + String(horinicio.value) + ":01")
+            const datutc = new Date(datloc.toUTCString())
+            datHorIni = datutc.toISOString().slice(0, 19)
+        } else { datHorIni = String(datinicio.value) + "T" + String(horinicio.value) + ":01" }
         console.log(datHorIni)
     })
     horfim.addEventListener('change', () => {
-        const datloc = new Date(String(datfim.value) + "T" + String(horfim.value) + ":01")
-        const datutc = new Date(datloc.toUTCString())
-        datHorFim = datutc.toISOString().slice(0, 19)
+        if (deviceso.value === 'APP_DAILY_OFFER'){
+            const datloc = new Date(String(datfim.value) + "T" + String(horfim.value) + ":01")
+            const datutc = new Date(datloc.toUTCString())
+            datHorFim = datutc.toISOString().slice(0, 19)
+        }  else { datHorFim = String(datfim.value) + "T" + String(horfim.value) + ":01" }
         console.log(datHorFim)
     })
 }
