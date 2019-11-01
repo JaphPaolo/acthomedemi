@@ -1101,7 +1101,10 @@
                 "app": {
                     "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option>"
                 },
-                "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option><option value='full7'>FULL7</option><option value='full8'>FULL8</option>" }
+                "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option><option value='full7'>FULL7</option><option value='full8'>FULL8</option>" 
+                },
+                "appblack": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='horizontal3'>HORIZONTAL3</option>" 
+                }
             }
         },
         "netshoesmx": {
