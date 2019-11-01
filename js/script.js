@@ -724,7 +724,10 @@
             var dataEhoraFim = dataTratFim + horaTratFim;
             var dataFinal = dataEhoraFim.toString();
 
-            if (bannereseso.value === "full1"){
+            if (bannereseso.value === "tarja"){
+                dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.tarja;
+                if (bannereseso.value === "tarja") { dieizaumDeProg.id = "banner-stripe-home"; }
+            } else if (bannereseso.value === "full1"){
                 dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.full1;
                 if (bannereseso.value === "full1") { dieizaumDeProg.id = "APP_FULL"; }
             } else if (bannereseso.value === "full1"){
@@ -2037,6 +2040,9 @@
         var bann = document.querySelector("#bannereseso");
 
         switch (bann.value) {
+            case "tarja":
+                return "6166d03e-80c0-4724-acec-caf8b8863d6d"
+                break;
             case "full1":
                 return "352fc1f5-7eda-406c-befc-5816f5ad06f5"
                 break;
