@@ -578,7 +578,7 @@
                 },
                 "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option><option value='full7'>FULL7</option>" 
                 },
-                "appblack": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='deal4'>DEAL4</option><option value='horizontal3'>HORIZONTAL3</option><option value='trioinferior'>TRIO INFERIOR1</option><option value='trioinferior2'>TRIO INFERIOR2</option><option value='horizontal4'>HORIZONTAL4</option><option value='marca1'>MARCA1</option><option value='marca2'>MARCA2</option><option value='marca3'>MARCA3</option><option value='marca4'>MARCA4</option><option value='marca5'>MARCA5</option><option value='marca6'>MARCA6</option><option value='marca7'>MARCA7</option><option value='marca8'>MARCA8</option>"
+                "appblack": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='tarja'>TARJA</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='deal4'>DEAL4</option><option value='horizontal3'>HORIZONTAL3</option><option value='trioinferior'>TRIO INFERIOR1</option><option value='trioinferior2'>TRIO INFERIOR2</option><option value='horizontal4'>HORIZONTAL4</option><option value='marca1'>MARCA1</option><option value='marca2'>MARCA2</option><option value='marca3'>MARCA3</option><option value='marca4'>MARCA4</option><option value='marca5'>MARCA5</option><option value='marca6'>MARCA6</option><option value='marca7'>MARCA7</option><option value='marca8'>MARCA8</option>"
                 }
             },
             "progFormato": {
@@ -586,7 +586,7 @@
                 "mobile": "<option value='FORMATO'>FORMATO</option><option value='full1abc'>FULL1A, B e C</option><option value='full2abc'>FULL2A, B e C</option><option value='full3abc'>FULL3A, B e C</option><option value='deals123'>DEAL1, 2 E 3</option>",
                 "app": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
                 "promoapp": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
-                "appblack": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='deal4'>DEAL4</option><option value='horizontal3'>HORIZONTAL3</option><option value='trioinferior'>TRIO INFERIOR1</option><option value='trioinferior2'>TRIO INFERIOR2</option><option value='horizontal4'>HORIZONTAL4</option><option value='marca1'>MARCA1</option><option value='marca2'>MARCA2</option><option value='marca3'>MARCA3</option><option value='marca4'>MARCA4</option><option value='marca5'>MARCA5</option><option value='marca6'>MARCA6</option><option value='marca7'>MARCA7</option><option value='marca8'>MARCA8</option>"
+                "appblack": "<option value='FORMATO'>FORMATO</option><option value='tarja'>TARJA</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='deal4'>DEAL4</option><option value='horizontal3'>HORIZONTAL3</option><option value='trioinferior'>TRIO INFERIOR1</option><option value='trioinferior2'>TRIO INFERIOR2</option><option value='horizontal4'>HORIZONTAL4</option><option value='marca1'>MARCA1</option><option value='marca2'>MARCA2</option><option value='marca3'>MARCA3</option><option value='marca4'>MARCA4</option><option value='marca5'>MARCA5</option><option value='marca6'>MARCA6</option><option value='marca7'>MARCA7</option><option value='marca8'>MARCA8</option>"
             },
             "bannersProg": {
                 "desktop": {
@@ -731,6 +731,22 @@
                     }
                 },
                 "appblack": {
+                    "tarja":{
+                        "uuid": "",
+                        "id": "",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "BlackApp"
+                        },
+                        "criteria": {
+                            "platform": "APP_TARJA",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
                     "full1":{
                         "uuid": "",
                         "id": "APP_FULL",

@@ -1277,7 +1277,11 @@
             var dataEhoraFim = dataTratFim + horaTratFim;
             var dataFinal = dataEhoraFim.toString();
 
-            if (bannereseso.value === "full1"){
+            
+            if (bannereseso.value === "tarja"){
+                dieizaumDeProg = infoStores.zattini.bannersProg.appblack.tarja;
+                if (bannereseso.value === "tarja") { dieizaumDeProg.id = "banner-stripe-home"; }
+            } else if (bannereseso.value === "full1"){
                 dieizaumDeProg = infoStores.zattini.bannersProg.appblack.full1;
                 if (bannereseso.value === "full1") { dieizaumDeProg.id = "APP_FULL"; }
             } else if (bannereseso.value === "full1"){
@@ -1378,6 +1382,10 @@
             console.log(progjson);
             botaoPre.disabled = true;
     }
+
+
+
+
 
     function constroiJsontDeskClubeNS() {
         console.log("Desktop");
@@ -2430,6 +2438,9 @@
         var bann = document.querySelector("#bannereseso");
 
         switch (bann.value) {
+            case "tarja":
+                return "a244b0cf-d59c-43f0-a011-00861a77dc6d"
+                break;
             case "full1":
                 return "1aa5b5fe-656e-4033-8c6d-0c75f9d1f1b0"
                 break;
