@@ -730,7 +730,7 @@
             } else if (bannereseso.value === "full1"){
                 dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.full1;
                 if (bannereseso.value === "full1") { dieizaumDeProg.id = "APP_FULL"; }
-            } else if (bannereseso.value === "full1"){
+            } else if (bannereseso.value === "horizontal1"){
                 dieizaumDeProg = infoStores.netshoes.bannersProg.appblack.horizontal1;
                 if (bannereseso.value === "horizontal1") { dieizaumDeProg.id = "APP_HORIZONTAL_1" }
             } else if (bannereseso.value === "horizontal2"){
