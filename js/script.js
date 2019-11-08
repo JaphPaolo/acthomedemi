@@ -1765,6 +1765,7 @@
         if (storeso.value === "zattini" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.zattini.banners.app.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.zattini.banners.promoapp.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.zattini.banners.appblack.bnForm }
+        if (storeso.value === "zattini" && deviceso.value === "topmenu") { bannereseso.innerHTML = infoStores.zattini.banners.topmenu.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.shoestock.banners.desktop.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.shoestock.banners.mobile.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.shoestock.banners.app.bnForm }
@@ -2563,6 +2564,37 @@
         }
     }
 
+    function defBannerZattiniTopMenu() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "1":
+                return "34672425-fe76-4ed7-a5ef-1d3ca82d284b"
+                break;
+            case "2":
+                return "d1e42542-085d-4cb6-ad1b-e64b809ce21f"
+                break;
+            case "3":
+                return "7d77ffd1-bb86-48e5-81a1-02e6fc63d7c1"
+                break;
+            case "4":
+                return "0782add9-860f-4823-aab2-0c5edcc80327"
+                break;
+            case "5":
+                return "0a801329-e2cc-4403-8b3e-4be5d86be598"
+                break;
+            case "6":
+                return "8bada97f-4a76-406e-a200-1e55cf677cb5"
+                break;
+            case "7":
+                return "ce344922-8b8a-4bb2-8be7-10084d30bcec"
+                break;
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
+
     //netshoesar
     function defBannerNetshoesarDesk() {
         var bann = document.querySelector("#bannereseso");
@@ -3152,6 +3184,8 @@
             return defBannerZattiniPromoapp();
         } else if (storeso.value === "zattini" && deviceso.value === "appblack") {
             return defBannerZattiniAppblack();
+        } else if (storeso.value === "zattini" && deviceso.value === "topmenu") {
+            return defBannerZattiniTopMenu();
         } else if (storeso.value === "netshoesar" && deviceso.value === "desktop") {
             return defBannerNetshoesarDesk();
         } else if (storeso.value === "netshoesar" && deviceso.value === "mobile") {
