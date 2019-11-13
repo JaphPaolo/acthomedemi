@@ -101,7 +101,7 @@ const postOferta = () => {
         }
     });
 
-    xhr.open("POST", "https://prd-ingress.netshoes.io/banner//admin");
+    xhr.open("POST", "https://prd-ingress.netshoes.io/banner/admin");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("storeId", storeso.value);
     xhr.setRequestHeader("cache-control", "no-cache");
