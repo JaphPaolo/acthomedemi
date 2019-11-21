@@ -1158,8 +1158,10 @@
                 "app": {
                     "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option>"
                 },
-                "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option>" }
-            }
+                "promoapp": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option>"}, 
+                "appblack": { "bnForm": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='horizontal3'>HORIZONTAL3</option>" 
+                }
+            },
         },
         "shoestock": {
             "storeid": "L_SHOESTOCK",

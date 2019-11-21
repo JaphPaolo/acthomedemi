@@ -1760,6 +1760,7 @@
         if (storeso.value === "netshoesmx" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoesmx.banners.mobile.bnForm }
         if (storeso.value === "netshoesmx" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoesmx.banners.app.bnForm }
         if (storeso.value === "netshoesmx" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.netshoesmx.banners.promoapp.bnForm }
+        if (storeso.value === "netshoesmx" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.netshoesmx.banners.appblack.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.zattini.banners.desktop.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.zattini.banners.mobile.bnForm }
         if (storeso.value === "zattini" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.zattini.banners.app.bnForm }
@@ -1820,6 +1821,11 @@
         if (deviceso.value === "app" || deviceso.value === "promoapp" || deviceso.value === "appblack") {
             if (storeso.value === "netshoesar" || storeso.value === "netshoesmx") {
                 if (deviceso.value === "appblack" && storeso.value === "netshoesar") {
+                    imagem.setAttribute("src", estaticoLojas() + objJson.data.urlImage)
+                    link.setAttribute("href", objJson.data.urlTarget)
+                    ibagemImg.value = objJson.data.urlImage
+                    ibagemUrl.value = objJson.data.urlTarget
+                } else if (deviceso.value === "appblack" && storeso.value === "netshoesmx") {
                     imagem.setAttribute("src", estaticoLojas() + objJson.data.urlImage)
                     link.setAttribute("href", objJson.data.urlTarget)
                     ibagemImg.value = objJson.data.urlImage
@@ -2925,6 +2931,27 @@
                 break;
         }
     }
+    function defBannerNetshoesmxAppblack() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "full1":
+                return "34271402-773c-4196-b73d-6679285b9dd0"
+                break;
+            case "horizontal1":
+                return "f8248a61-907b-4327-b78a-b8b78c20ad3c"
+                break;
+            case "horizontal2":
+                return "3f92ece6-a2a6-41f4-934c-2773397e064c"
+                break;
+            case "horizontal3":
+                return "53f873ee-db3f-4e77-b204-c0c67f194e13"
+                break;
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
 
     //shoestock
     function defBannerShoestockDesk() {
@@ -3204,6 +3231,8 @@
             return defBannerNetshoesmxApp();
         } else if (storeso.value === "netshoesmx" && deviceso.value === "promoapp") {
             return defBannerNetshoesmxPromoapp();
+        } else if (storeso.value === "netshoesmx" && deviceso.value === "appblack") {
+            return defBannerNetshoesmxAppblack();
         } else if (storeso.value === "shoestock" && deviceso.value === "desktop") {
             return defBannerShoestockDesk();
         } else if (storeso.value === "shoestock" && deviceso.value === "mobile") {
