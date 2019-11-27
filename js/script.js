@@ -1772,6 +1772,8 @@
         if (storeso.value === "shoestock" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.shoestock.banners.app.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "promoapp") { bannereseso.innerHTML = infoStores.shoestock.banners.promoapp.bnForm }
         if (storeso.value === "shoestock" && deviceso.value === "appblack") { bannereseso.innerHTML = infoStores.shoestock.banners.appblack.bnForm }
+        if (storeso.value === "freelace" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.freelace.banners.desktop.bnForm }
+        if (storeso.value === "freelace" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.freelace.banners.mobile.bnForm }
     }
 
     function fazGetModDesk() {
@@ -1812,6 +1814,7 @@
         if (storeso.value === "netshoesmx") { return "https://static.netshoes.com.mx" }
         if (storeso.value === "zattini") { return "https://static.zattini.com.br" }
         if (storeso.value === "shoestock") { return "https://static.shoestock.com.br" }
+        if (storeso.value === "freelace") { return "https://static.freelace.com.br" }
     }
 
     function preencheCampos() {
@@ -3181,6 +3184,56 @@
         }
     }
 
+    //freelace
+     function defBannerFreelaceDesk() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "full1":
+                return "97070883-bb75-416d-8232-35fb5041911e"
+                break;
+            case "trio1":
+                return "e639b4cf-3828-4dad-8649-17310be90a68"
+                break;
+            case "trio2":
+                return "00772e0e-c26c-4354-b785-4468e4584d8b"
+                break;
+            case "trio3":
+                return "0dd48ba0-facc-4a93-97b1-cc952f0951f9"
+                break;
+            case "horizontal1":
+                return "41120ac9-bd93-4291-a270-7fffb81c4bfd"
+                break;
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
+    function defBannerFreelaceMob() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "full1":
+                return "eed1af6f-07ee-4c54-9300-d4cc4ebaece6"
+                break;
+            case "full2":
+                return "cfd12cf9-43cd-4a42-8ada-8bfbece93bd3"
+                break;
+            case "full3":
+                return "871f64b4-6e82-4e29-975b-87de6a788d54"
+                break;
+            case "full4":
+                return "20d790a7-f5fc-475b-af90-be537264fc44"
+                break;
+            case "full5":
+                return "fce5a4e1-5f5a-4fe6-9936-1e53919b9679"
+                break;
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
+
 
 
     //Define lojas, banners e devices.
@@ -3243,7 +3296,12 @@
             return defBannerShoestockPromoapp();
         } else if (storeso.value === "shoestock" && deviceso.value === "appblack") {
             return defBannerShoestockAppblack();
+        } else if (storeso.value === "freelace" && deviceso.value === "desktop") {
+            return defBannerFreelaceDesk();
+        } else if (storeso.value === "freelace" && deviceso.value === "mobile") {
+            return defBannerFreelaceMob();
         }
+        
 
     }
 
