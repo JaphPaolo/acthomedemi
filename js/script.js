@@ -1751,6 +1751,7 @@
         if (storeso.value === "netshoes" && deviceso.value === "topmenu") { bannereseso.innerHTML = infoStores.netshoes.banners.topmenu.bnForm }
         if (storeso.value === "clubenetshoes" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.clubenetshoes.banners.desktop.bnForm }
         if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.clubenetshoes.banners.mobile.bnForm }
+        if (storeso.value === "clubenetshoes" && deviceso.value === "topmenu") { bannereseso.innerHTML = infoStores.clubenetshoes.banners.topmenu.bnForm }
         if (storeso.value === "netshoesar" && deviceso.value === "desktop") { bannereseso.innerHTML = infoStores.netshoesar.banners.desktop.bnForm }
         if (storeso.value === "netshoesar" && deviceso.value === "mobile") { bannereseso.innerHTML = infoStores.netshoesar.banners.mobile.bnForm }
         if (storeso.value === "netshoesar" && deviceso.value === "app") { bannereseso.innerHTML = infoStores.netshoesar.banners.app.bnForm }
@@ -1861,8 +1862,8 @@
     }
 
     function defNume() {
-        const retornaZero = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "full1", "deal1", "full1a", "botao1", "full2a", "full3a", "deal1", "triplo1", "triplo4", "horizontal"]
-        const retornaUm = ["full2", "deal2", "full1b", "botao2", "full2b", "full3b", "deal2", "triplo2", "triplo5"]
+        const retornaZero = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "full1", "deal1", "full1a", "botao1", "full2a", "full3a", "deal1", "triplo1", "triplo4", "horizontal"]
+        const retornaUm = ["1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "full2", "deal2", "full1b", "botao2", "full2b", "full3b", "deal2", "triplo2", "triplo5"]
         const retornaDois = ["full3", "deal3", "full1c", "botao3", "full2c", "full3c", "deal3", "triplo3", "triplo6"]
         const retornaTres = ["full4", "deal4", "full1d", "botao4", "full2d", "full3d", "deal4", "triplo7"]
 
@@ -2256,6 +2257,65 @@
                 break;
         }
     }
+
+    function defBannerClubeNetshoesTopMenu() {
+        var bann = document.querySelector("#bannereseso");
+
+        switch (bann.value) {
+            case "1a":
+                return "5d5d9e635e7f921dba6e414a"
+                break;
+            case "1b":
+                return "5d5d9e635e7f921dba6e414a"
+                break;
+            case "2a":
+                return "5d5d9e635e7f921dba6e414b"
+                break;
+            case "2b":
+                return "5d5d9e635e7f921dba6e414b"
+                break;
+            case "3a":
+                return "5d5d9e635e7f921dba6e414c"
+                break;
+            case "3b":
+                return "5d5d9e635e7f921dba6e414c"
+                break;
+            case "4a":
+                return "5d5d9e635e7f921dba6e414d"
+                break;
+            case "4b":
+                return "5d5d9e635e7f921dba6e414d"
+                break;
+            case "5a":
+                return "5d5d9e635e7f921dba6e414e"
+                break;
+            case "5b":
+                return "5d5d9e635e7f921dba6e414e"
+                break;
+            case "6a":
+                return "5d5d9e655e7f921dba6e4198"
+                break;
+            case "6b":
+                return "5d5d9e655e7f921dba6e4198"
+                break;
+            case "7a":
+                return "5d5d9e635e7f921dba6e414f"
+                break;
+            case "7b":
+                return "5d5d9e635e7f921dba6e414f"
+                break;
+            case "8a":
+                return "5d5d9e635e7f921dba6e4150"
+                break;
+            case "8b":
+                return "5d5d9e635e7f921dba6e4150"
+                break;
+
+            default: alert("Erro! Contate a Opec!")
+                break;
+        }
+    }
+
     function defBannerClubeNetshoesMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3254,6 +3314,8 @@
             return defBannerClubeNetshoesDesk();
         } else if (storeso.value === "clubenetshoes" && deviceso.value === "mobile") {
             return defBannerClubeNetshoesMob();
+        } else if (storeso.value === "clubenetshoes" && deviceso.value === "topmenu") {
+            return defBannerClubeNetshoesTopMenu();
         } else if (storeso.value === "zattini" && deviceso.value === "desktop") {
             return defBannerZattiniDesk();
         } else if (storeso.value === "zattini" && deviceso.value === "mobile") {
