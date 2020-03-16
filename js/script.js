@@ -3171,6 +3171,9 @@
         var bann = document.querySelector("#bannereseso");
 
         switch (bann.value) {
+            case "tarja":
+                return "1367ed5f-8ad1-4347-987d-4ab94f6c235c"
+                break;
             case "full1":
                 return "6193889f-1c1c-4415-a61e-87cec6567965"
                 break;
