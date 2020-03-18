@@ -3404,11 +3404,33 @@
         atualizaJson();
     }
 
-    function atualizaJson() {
-        if (objJson.data.type === "IMAGE_LIST") {
-            objJson.data.images[defNume()].urlImage = ibagemImg.value
-            objJson.data.images[defNume()].urlTarget = ibagemUrl.value
+    function deletaObj(){
+        var urlImage = objJson.data.images[0].urlImage
+        var urlTarget = objJson.data.images[0].urlTarget
+        var novoObj = {
+            urlImage, urlTarget
         }
+        objJson.data.images = [novoObj]
+    }
+
+    function atualizaJson() {
+        if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && !objJson.data.images[1]){
+            var imagesFinal = objJson.data.images
+            var urlImage = ibagemImg.value
+            var urlTarget = ibagemUrl.value
+            var novoObj = {
+                urlImage, urlTarget
+            }
+            if (urlImage != ""){
+                imagesFinal.push(novoObj)
+            }
+        } else if (objJson.data.type === "IMAGE_LIST") {
+                objJson.data.images[defNume()].urlImage = ibagemImg.value
+                objJson.data.images[defNume()].urlTarget = ibagemUrl.value
+                if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && objJson.data.images[1].urlImage == ""){
+                    deletaObj()
+                } 
+            }
         else {
             objJson.data.urlImage = ibagemImg.value
             objJson.data.urlTarget = ibagemUrl.value
