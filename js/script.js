@@ -3441,20 +3441,23 @@
     }
 
     function atualizaJson() {
-        if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && !objJson.data.images[1]){
+        if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && !objJson.data.images[1]){            
             var imagesFinal = objJson.data.images
             var urlImage = ibagemImg.value
             var urlTarget = ibagemUrl.value
             var novoObj = {
-                urlImage, urlTarget
+            urlImage, urlTarget
             }
-            if (urlImage != ""){
+            if (urlImage != "" && defNume() != 0){
                 imagesFinal.push(novoObj)
-            }
+            } else {
+                objJson.data.images[defNume()].urlImage = ibagemImg.value
+                objJson.data.images[defNume()].urlTarget = ibagemUrl.value
+            }            
         } else if (objJson.data.type === "IMAGE_LIST") {
                 objJson.data.images[defNume()].urlImage = ibagemImg.value
                 objJson.data.images[defNume()].urlTarget = ibagemUrl.value
-                if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && objJson.data.images[1].urlImage == ""){
+                if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && objJson.data.images[1].urlImage == "" && defNume() != 0){
                     deletaObj()
                 } 
             }
@@ -3462,6 +3465,7 @@
             objJson.data.urlImage = ibagemImg.value
             objJson.data.urlTarget = ibagemUrl.value
         }
+        console.log(objJson)
     }
 
     function fazPut() {
