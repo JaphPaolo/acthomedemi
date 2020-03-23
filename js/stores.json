@@ -13,5 +13,8 @@
     },
     "shoestock": {
         "storeid": "L_SHOESTOCK"
+    },
+    "clubenetshoes": {
+        "storeid": "L_CLUBENETSHOES"
     }
 }

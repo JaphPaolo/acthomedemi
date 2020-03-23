@@ -1862,8 +1862,8 @@
     }
 
     function defNume() {
-        const retornaZero = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "full1", "deal1", "full1a", "botao1", "full2a", "full3a", "deal1", "triplo1", "triplo4", "horizontal"]
-        const retornaUm = ["1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "full2", "deal2", "full1b", "botao2", "full2b", "full3b", "deal2", "triplo2", "triplo5"]
+        const retornaZero = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "full1", "deal1", "full1a", "botao1", "full2a", "full3a", "deal1", "triplo1", "triplo4", "horizontal"]
+        const retornaUm = ["1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "full2", "deal2", "full1b", "botao2", "full2b", "full3b", "deal2", "triplo2", "triplo5"]
         const retornaDois = ["full3", "deal3", "full1c", "botao3", "full2c", "full3c", "deal3", "triplo3", "triplo6"]
         const retornaTres = ["full4", "deal4", "full1d", "botao4", "full2d", "full3d", "deal4", "triplo7"]
 
@@ -2148,31 +2148,58 @@
         var bann = document.querySelector("#bannereseso");
 
         switch (bann.value) {
-            case "1":
+            case "1a":
                 return "67e4fdf4-41f6-4f3f-9e5e-4f814601ccc5" //ok
                 break;
-            case "2":
+            case "1b":
+                return "67e4fdf4-41f6-4f3f-9e5e-4f814601ccc5" //ok
+                break;
+            case "2a":
                 return "46d54a32-c7a9-4942-8b51-5d485b7e58fd"
                 break;
-            case "3":
+            case "2b":
+                return "46d54a32-c7a9-4942-8b51-5d485b7e58fd"
+                break;
+            case "3a":
                 return "1daa2b17-6b68-423c-9142-7bd1f85d15fd"
                 break;
-            case "4":
+            case "3b":
+                return "1daa2b17-6b68-423c-9142-7bd1f85d15fd"
+                break;
+            case "4a":
                 return "07331431-38f3-4f52-935c-4234a980ee2e"
                 break;
-            case "5":
+            case "4b":
+                return "07331431-38f3-4f52-935c-4234a980ee2e"
+                break;
+            case "5a":
                 return "c9004ed1-fca2-44d5-811d-1582d2dbc350"
                 break;
-            case "6":
+            case "5b":
+                return "c9004ed1-fca2-44d5-811d-1582d2dbc350"
+                break;
+            case "6a":
                 return "edf66aee-2b17-42a6-9536-0a912472bd71"
                 break;
-            case "7":
+            case "6b":
+                return "edf66aee-2b17-42a6-9536-0a912472bd71"
+                break;
+            case "7a":
                 return "6dd6deb3-d67e-4dda-9064-0df7d4b9061a"
                 break;
-            case "8":
+            case "7b":
+                return "6dd6deb3-d67e-4dda-9064-0df7d4b9061a"
+                break;
+            case "8a":
                 return "2e6ce1a6-3545-4db0-92a5-4ba3934cfcc5"
                 break;
-            case "9":
+            case "8b":
+                return "2e6ce1a6-3545-4db0-92a5-4ba3934cfcc5"
+                break;
+            case "9a":
+                return "7c52c131-a4ec-4ecb-945c-c95820ca1836"
+                break;
+            case "9b":
                 return "7c52c131-a4ec-4ecb-945c-c95820ca1836"
                 break;
             // case "10":
