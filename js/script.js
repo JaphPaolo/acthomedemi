@@ -1790,6 +1790,7 @@
                 console.log("DEU CERTO o get PORRA!");
                 objJson = JSON.parse(this.responseText);
                 preencheCampos();
+                console.log(objJson)
             }
         });
         xhr.open("GET", "https://prd-ingress.netshoes.io/banner/admin/" + defineTudoNessaPorra());
@@ -3278,7 +3279,7 @@
     }
 
     //freelace
-     function defBannerFreelaceDesk() {
+    function defBannerFreelaceDesk() {
         var bann = document.querySelector("#bannereseso");
 
         switch (bann.value) {
@@ -3396,7 +3397,7 @@
         } else if (storeso.value === "freelace" && deviceso.value === "mobile") {
             return defBannerFreelaceMob();
         }
-        
+
 
     }
 
@@ -3431,36 +3432,42 @@
         atualizaJson();
     }
 
-    function deletaObj(){
-        var urlImage = objJson.data.images[0].urlImage
-        var urlTarget = objJson.data.images[0].urlTarget
-        var novoObj = {
-            urlImage, urlTarget
-        }
-        objJson.data.images = [novoObj]
+    function deletaObj() {
+        objJson.data.images.splice(defNume(), 1)
     }
 
+    const naoPode = [
+        "home-gamma-killers-list",
+        "home-gamma-categories-list",
+        "home-gamma-categories-list-line-1",
+        "home-gamma-killer-list-line-1",
+        "zt-home-killers-list",
+        "zt-home-categories-list",
+        "zt-home-brands-list"
+    ]
+
     function atualizaJson() {
-        if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && !objJson.data.images[1]){            
+        if (objJson.data.type === "IMAGE_LIST" && !objJson.id.includes(naoPode)) {
             var imagesFinal = objJson.data.images
             var urlImage = ibagemImg.value
             var urlTarget = ibagemUrl.value
             var novoObj = {
-            urlImage, urlTarget
+                urlImage, urlTarget
             }
-            if (urlImage != "" && defNume() != 0){
+            if (urlImage != "" && !objJson.data.images[defNume()]) {
                 imagesFinal.push(novoObj)
             } else {
                 objJson.data.images[defNume()].urlImage = ibagemImg.value
                 objJson.data.images[defNume()].urlTarget = ibagemUrl.value
-            }            
-        } else if (objJson.data.type === "IMAGE_LIST") {
-                objJson.data.images[defNume()].urlImage = ibagemImg.value
-                objJson.data.images[defNume()].urlTarget = ibagemUrl.value
-                if (objJson.data.type === "IMAGE_LIST" && deviceso.value === "topmenu" && objJson.data.images[1].urlImage == "" && defNume() != 0){
+                if (objJson.data.type === "IMAGE_LIST" && objJson.data.images[defNume()].urlImage == "" && defNume() != 0) {
                     deletaObj()
-                } 
+                }
             }
+
+        } else if (objJson.data.type === "IMAGE_LIST"){
+            objJson.data.images[defNume()].urlImage = ibagemImg.value
+            objJson.data.images[defNume()].urlTarget = ibagemUrl.value
+        }
         else {
             objJson.data.urlImage = ibagemImg.value
             objJson.data.urlTarget = ibagemUrl.value
