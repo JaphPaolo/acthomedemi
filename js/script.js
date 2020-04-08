@@ -69,7 +69,7 @@
                 objJson = JSON.parse(this.responseText);
             }
         });
-        xhr.open("GET", "https://prd-ingress.netshoes.io/banner/admin/" + idBann.value);
+        xhr.open("GET", "https://aks-prd-ingress.netshoes.io/banner/admin/" + idBann.value);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
@@ -130,7 +130,7 @@
             }
         });
 
-        xhr.open("PUT", "https://prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
+        xhr.open("PUT", "https://aks-prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
@@ -1720,7 +1720,7 @@
                 retorno.innerHTML = "<p class='pAntesDoUuid'>Banner Programado! Por favor guarde este id para a manutenção dos banners: </p><br><p class='uuidProg'>" + logues.uuid + "</p>"
             }
         });
-        xhr.open("POST", "https://prd-ingress.netshoes.io/banner/admin");
+        xhr.open("POST", "https://aks-prd-ingress.netshoes.io/banner/admin");
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
@@ -1793,7 +1793,7 @@
                 console.log(objJson)
             }
         });
-        xhr.open("GET", "https://prd-ingress.netshoes.io/banner/admin/" + defineTudoNessaPorra());
+        xhr.open("GET", "https://aks-prd-ingress.netshoes.io/banner/admin/" + defineTudoNessaPorra());
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
@@ -3486,7 +3486,7 @@
             }
         });
 
-        xhr.open("PUT", "https://prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
+        xhr.open("PUT", "https://aks-prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);

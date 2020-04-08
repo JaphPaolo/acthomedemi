@@ -34,7 +34,7 @@ const load = () => {
         habilitaCampoDevice();
     });
     horinicio.addEventListener('change', () => {
-        if (deviceso.value === 'APP_DAILY_OFFER'){
+        if (deviceso.value === 'APP_DAILY_OFFER') {
             const datloc = new Date(String(datinicio.value) + "T" + String(horinicio.value) + ":01")
             const datutc = new Date(datloc.toUTCString())
             datHorIni = datutc.toISOString().slice(0, 19)
@@ -42,11 +42,11 @@ const load = () => {
         console.log(datHorIni)
     })
     horfim.addEventListener('change', () => {
-        if (deviceso.value === 'APP_DAILY_OFFER'){
+        if (deviceso.value === 'APP_DAILY_OFFER') {
             const datloc = new Date(String(datfim.value) + "T" + String(horfim.value) + ":01")
             const datutc = new Date(datloc.toUTCString())
             datHorFim = datutc.toISOString().slice(0, 19)
-        }  else { datHorFim = String(datfim.value) + "T" + String(horfim.value) + ":01" }
+        } else { datHorFim = String(datfim.value) + "T" + String(horfim.value) + ":01" }
         console.log(datHorFim)
     })
 }
@@ -101,7 +101,7 @@ const postOferta = () => {
         }
     });
 
-    xhr.open("POST", "https://prd-ingress.netshoes.io/banner//admin");
+    xhr.open("POST", "https://aks-prd-ingress.netshoes.io/banner/admin");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("storeId", storeso.value);
     xhr.setRequestHeader("cache-control", "no-cache");
