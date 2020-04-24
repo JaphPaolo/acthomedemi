@@ -588,7 +588,7 @@
                 }
             },
             "progFormato": {
-                "desktop": "<option value='FORMATO'>FORMATO</option><option value='fulls123'>FULL1, 2 e 3</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='trio5'>TRIO5</option><option value='trio6'>TRIO6</option><option value='trio7'>TRIO7</option><option value='trio8'>TRIO8</option><option value='trio9'>TRIO9</option><option value='horizontal'>HORIZONTAL</option>",
+                "desktop": "<option value='FORMATO'>FORMATO</option><option value='fulls123'>FULL1, 2 e 3</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='trio5'>TRIO5</option><option value='trio6'>TRIO6</option><option value='horizontal'>HORIZONTAL</option><option value='trio7'>TRIO7</option><option value='trio8'>TRIO8</option><option value='trio9'>TRIO9</option><option value='horizontal2'>HORIZONTAL2</option>",
                 "mobile": "<option value='FORMATO'>FORMATO</option><option value='full1abc'>FULL1A, B e C</option><option value='full2abc'>FULL2A, B e C</option><option value='full3abc'>FULL3A, B e C</option><option value='deals123'>DEAL1, 2 E 3</option>",
                 "app": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
                 "promoapp": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
@@ -597,7 +597,7 @@
             "bannersProg": {
                 "desktop": {
                     "fulls123": {
-                        "id": "home-gamma-full-top-0",
+                        "id": "zt-home-full-top-0",
                         "storeId": "L_ZATTINI",
                         "data": {
                             "type": "IMAGE_LIST",
@@ -627,7 +627,20 @@
                         }
                     },
                     "horizontal": {
-                        "id": "home-gamma-full-buttons-line1",
+                        "id": "zt-home-full-buttons-line1",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "Netshoes"
+                        },
+                        "criteria": {
+                            "platform": "DESKTOP"
+                        }
+                    },
+                    "horizontal2": {
+                        "id": "zt-home-full-buttons-line2",
                         "storeId": "L_ZATTINI",
                         "data": {
                             "type": "IMAGE",

@@ -889,21 +889,25 @@
 
             } else if (bannereseso.value === "trio1" || bannereseso.value === "trio2" || bannereseso.value === "trio3" || bannereseso.value === "trio4" || bannereseso.value === "trio5" || bannereseso.value === "trio6" || bannereseso.value === "trio7" || bannereseso.value === "trio8" || bannereseso.value === "trio9") {
                 dieizaumDeProg = infoStores.zattini.bannersProg.desktop.trios;
-                if (bannereseso.value === "trio1") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-0" }
-                if (bannereseso.value === "trio2") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-1" }
-                if (bannereseso.value === "trio3") { dieizaumDeProg.id = "home-gamma-triple-line1-rectangle-2" }
-                if (bannereseso.value === "trio4") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-0" }
-                if (bannereseso.value === "trio5") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-1" }
-                if (bannereseso.value === "trio6") { dieizaumDeProg.id = "home-gamma-triple-line2-rectangle-2" }
-                if (bannereseso.value === "trio7") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-0" }
-                if (bannereseso.value === "trio8") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-1" }
-                if (bannereseso.value === "trio9") { dieizaumDeProg.id = "home-gamma-triple-line3-rectangle-2" }
+                if (bannereseso.value === "trio1") { dieizaumDeProg.id = "zt-home-triple-line1-rectangle-0" }
+                if (bannereseso.value === "trio2") { dieizaumDeProg.id = "zt-home-triple-line1-rectangle-1" }
+                if (bannereseso.value === "trio3") { dieizaumDeProg.id = "zt-home-triple-line1-rectangle-2" }
+                if (bannereseso.value === "trio4") { dieizaumDeProg.id = "zt-home-triple-line2-rectangle-0" }
+                if (bannereseso.value === "trio5") { dieizaumDeProg.id = "zt-home-triple-line2-rectangle-1" }
+                if (bannereseso.value === "trio6") { dieizaumDeProg.id = "zt-home-triple-line2-rectangle-2" }
+                if (bannereseso.value === "trio7") { dieizaumDeProg.id = "zt-home-triple-line3-rectangle-0" }
+                if (bannereseso.value === "trio8") { dieizaumDeProg.id = "zt-home-triple-line3-rectangle-1" }
+                if (bannereseso.value === "trio9") { dieizaumDeProg.id = "zt-home-triple-line3-rectangle-2" }
                 dieizaumDeProg.data.urlImage = ibagemProgImg.value
                 dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
-            } else {
+            } else if (bannereseso.value === "horizontal"){
                 dieizaumDeProg = infoStores.zattini.bannersProg.desktop.horizontal;
                 dieizaumDeProg.data.urlImage = ibagemProgImg.value
                 dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+            } else {
+                    dieizaumDeProg = infoStores.zattini.bannersProg.desktop.horizontal2;
+                    dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                    dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
             }
 
             console.log(dieizaumDeProg);
