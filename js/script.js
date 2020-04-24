@@ -250,7 +250,7 @@
         var dJossa = document.querySelector(".jossa");
         console.log('qualquer cois so pra ver se passou')
         dJossa.classList.remove("escondida");
-        if (bannereseso.value === "fulls123" || bannereseso.value === "full1abc" || bannereseso.value === "full2abc" || bannereseso.value === "full3abc" || bannereseso.value === "deals123") {
+        if (bannereseso.value === "fulls123" || bannereseso.value === "full1abc" || bannereseso.value === "full2abc" || bannereseso.value === "full3abc" || bannereseso.value === "deals123" || bannereseso.value === "trio123" || bannereseso.value === "trio456") {
             dJossa.innerHTML = infoStores.deskProgFormaComList
         } else { dJossa.innerHTML = infoStores.deskProgFormaSemList }
 
@@ -968,8 +968,17 @@
             var dataFinal = dataEhoraFim.toString();
 
             //define o JSON
-            if (bannereseso.value === "full1abc") {
-                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full1abc;
+            if (bannereseso.value === "full1") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full1;
+                if (ibagemProgImg1.value === "") {
+                    alert("Preencha ao menos a imagem do Banner 1");
+                } else {
+                    storageBanner1.data.urlImage = ibagemProgImg1.value;
+                    storageBanner1.data.urlTarget = ibagemProgUrl1.value;
+                }
+
+            } else if (bannereseso.value === "trio123") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.trio123;
                 var storageBanner1 = {
                     "urlImage": "",
                     "urlTarget": "",
@@ -1003,8 +1012,8 @@
                     }
                 }
 
-            } else if (bannereseso.value === "full2abc") {
-                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full2abc;
+            } else if (bannereseso.value === "trio456") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.trio456;
                 var storageBanner1 = {
                     "urlImage": "",
                     "urlTarget": "",
@@ -1038,76 +1047,23 @@
                     }
                 }
 
-            } else if (bannereseso.value === "full3abc") {
-                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full3abc;
-                var storageBanner1 = {
-                    "urlImage": "",
-                    "urlTarget": "",
-                    "title": "zattini"
-                };
-                var storageBanner2 = {
-                    "urlImage": "",
-                    "urlTarget": "",
-                    "title": "zattini"
-                };
-                var storageBanner3 = {
-                    "urlImage": "",
-                    "urlTarget": "",
-                    "title": "zattini"
-                };
+            } else if (bannereseso.value === "full2") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full2;
                 if (ibagemProgImg1.value === "") {
                     alert("Preencha ao menos a imagem do Banner 1");
                 } else {
-                    storageBanner1.urlImage = ibagemProgImg1.value;
-                    storageBanner1.urlTarget = ibagemProgUrl1.value;
-                    dieizaumDeProg.data.images.push(storageBanner1);
-                    if (ibagemProgImg2.value !== "") {
-                        storageBanner2.urlImage = ibagemProgImg2.value;
-                        storageBanner2.urlTarget = ibagemProgUrl2.value;
-                        dieizaumDeProg.data.images.push(storageBanner2);
-                        if (ibagemProgImg3.value !== "") {
-                            storageBanner3.urlImage = ibagemProgImg3.value;
-                            storageBanner3.urlTarget = ibagemProgUrl3.value;
-                            dieizaumDeProg.data.images.push(storageBanner3);
-                        }
-                    }
+                    storageBanner1.data.urlImage = ibagemProgImg1.value;
+                    storageBanner1.data.urlTarget = ibagemProgUrl1.value;
                 }
 
-            } else if (bannereseso.value === "deals123") {
-                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.deals123;
-                var storageBanner1 = {
-                    "urlImage": "",
-                    "urlTarget": "",
-                    "title": "zattini"
-                };
-                var storageBanner2 = {
-                    "urlImage": "",
-                    "urlTarget": "",
-                    "title": "zattini"
-                };
-                var storageBanner3 = {
-                    "urlImage": "",
-                    "urlTarget": "",
-                    "title": "zattini"
-                };
+            } else if (bannereseso.value === "full3") {
+                dieizaumDeProg = infoStores.zattini.bannersProg.mobile.full3;
                 if (ibagemProgImg1.value === "") {
                     alert("Preencha ao menos a imagem do Banner 1");
                 } else {
-                    storageBanner1.urlImage = ibagemProgImg1.value;
-                    storageBanner1.urlTarget = ibagemProgUrl1.value;
-                    dieizaumDeProg.data.images.push(storageBanner1);
-                    if (ibagemProgImg2.value !== "") {
-                        storageBanner2.urlImage = ibagemProgImg2.value;
-                        storageBanner2.urlTarget = ibagemProgUrl2.value;
-                        dieizaumDeProg.data.images.push(storageBanner2);
-                        if (ibagemProgImg3.value !== "") {
-                            storageBanner3.urlImage = ibagemProgImg3.value;
-                            storageBanner3.urlTarget = ibagemProgUrl3.value;
-                            dieizaumDeProg.data.images.push(storageBanner3);
-                        }
-                    }
+                    storageBanner1.data.urlImage = ibagemProgImg1.value;
+                    storageBanner1.data.urlTarget = ibagemProgUrl1.value;
                 }
-
             }
 
             console.log(dieizaumDeProg);

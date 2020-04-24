@@ -589,7 +589,7 @@
             },
             "progFormato": {
                 "desktop": "<option value='FORMATO'>FORMATO</option><option value='fulls123'>FULL1, 2 e 3</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='trio5'>TRIO5</option><option value='trio6'>TRIO6</option><option value='horizontal'>HORIZONTAL</option><option value='trio7'>TRIO7</option><option value='trio8'>TRIO8</option><option value='trio9'>TRIO9</option><option value='horizontal2'>HORIZONTAL2</option>",
-                "mobile": "<option value='FORMATO'>FORMATO</option><option value='full1abc'>FULL1A, B e C</option><option value='full2abc'>FULL2A, B e C</option><option value='full3abc'>FULL3A, B e C</option><option value='deals123'>DEAL1, 2 E 3</option>",
+                "mobile": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='trio123'>TRIO 1, 2 e 3</option><option value='trio456'>TRIO 4, 5 e 6</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option>",
                 "app": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
                 "promoapp": "<option value='FORMATO'>FORMATO</option><option value='full1'>FULL1</option><option value='full2'>FULL2</option><option value='full3'>FULL3</option><option value='full4'>FULL4</option><option value='full5'>FULL5</option><option value='full6'>FULL6</option>",
                 "appblack": "<option value='FORMATO'>FORMATO</option><option value='tarja'>TARJA</option><option value='full1'>FULL1</option><option value='horizontal1'>HORIZONTAL1</option><option value='horizontal2'>HORIZONTAL2</option><option value='trio1'>TRIO1</option><option value='trio2'>TRIO2</option><option value='trio3'>TRIO3</option><option value='trio4'>TRIO4</option><option value='deal1'>DEAL1</option><option value='deal2'>DEAL2</option><option value='deal3'>DEAL3</option><option value='deal4'>DEAL4</option><option value='horizontal3'>HORIZONTAL3</option><option value='trioinferior'>TRIO INFERIOR1</option><option value='trioinferior2'>TRIO INFERIOR2</option><option value='horizontal4'>HORIZONTAL4</option><option value='marca1'>MARCA1</option><option value='marca2'>MARCA2</option><option value='marca3'>MARCA3</option><option value='marca4'>MARCA4</option><option value='marca5'>MARCA5</option><option value='marca6'>MARCA6</option><option value='marca7'>MARCA7</option><option value='marca8'>MARCA8</option>"
@@ -654,8 +654,23 @@
                     }
                 },
                 "mobile": {
-                    "full1abc": {
-                        "id": "home-gamma-banners-carousel-top",
+                    "full1": {
+                        "id": "zt-home-full-top",
+                        "storeId": "L_ZATTINI",
+                        "data": {
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": "zattini"
+                        },
+                        "criteria": {
+                            "platform": "MOBILE",
+                            "startDate": "",
+                            "endDate": ""
+                        }
+                    },
+                    "trio123": {
+                        "id": "zt-home-full-middle",
                         "storeId": "L_ZATTINI",
                         "data": {
                             "type": "IMAGE_LIST",
@@ -669,8 +684,8 @@
                             "endDate": ""
                         }
                     },
-                    "full2abc": {
-                        "id": "home-gamma-banners-carousel-middle",
+                    "trio456": {
+                        "id": "zt-home-full-bottom",
                         "storeId": "L_ZATTINI",
                         "data": {
                             "type": "IMAGE_LIST",
@@ -684,14 +699,14 @@
                             "endDate": ""
                         }
                     },
-                    "full3abc": {
-                        "id": "home-gamma-banners-carousel-middle-2",
+                    "full2": {
+                        "id": "zt-home-banner-fixe1",
                         "storeId": "L_ZATTINI",
                         "data": {
-                            "type": "IMAGE_LIST",
-                            "headline": " ",
-                            "subtitle": " ",
-                            "images": []
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": ""
                         },
                         "criteria": {
                             "platform": "MOBILE",
@@ -699,14 +714,14 @@
                             "endDate": ""
                         }
                     },
-                    "deals123": {
-                        "id": "home-gamma-banners-carousel-bottom",
+                    "full3": {
+                        "id": "zt-home-banner-fixe2",
                         "storeId": "L_ZATTINI",
                         "data": {
-                            "type": "IMAGE_LIST",
-                            "headline": " ",
-                            "subtitle": " ",
-                            "images": []
+                            "type": "IMAGE",
+                            "urlImage": "",
+                            "urlTarget": "",
+                            "alt": ""
                         },
                         "criteria": {
                             "platform": "MOBILE",
