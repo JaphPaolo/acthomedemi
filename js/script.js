@@ -135,6 +135,7 @@
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
         xhr.send(data);
+        console.log(data)
     }
 
 
@@ -183,7 +184,8 @@
             if (document.querySelector("#ibagemProgImg2").value != "") {
                 objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
                 objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
-            } else if (document.querySelector("#ibagemProgImg2").value != "") {
+            }
+            if (document.querySelector("#ibagemProgImg2").value != "") {
                 objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
                 objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
             }
