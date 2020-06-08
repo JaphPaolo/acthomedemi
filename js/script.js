@@ -2663,13 +2663,13 @@
 
         switch (bann.value) {
             case "full1":
-                return "6667017c-679e-4142-99b0-38deedddef63"
+                return "227803ac-cf6b-4240-9e46-3a86ca5d7e1b"
                 break;
             case "full2":
-                return "6667017c-679e-4142-99b0-38deedddef63"
+                return "227803ac-cf6b-4240-9e46-3a86ca5d7e1b"
                 break;
             case "full3":
-                return "6667017c-679e-4142-99b0-38deedddef63"
+                return "227803ac-cf6b-4240-9e46-3a86ca5d7e1b"
                 break;
             case "deal1":
                 return "cf60ccce-0acc-4e8c-9062-0984a940dfc1"
@@ -2687,7 +2687,7 @@
                 return "3d6283de-149e-4c2c-95f6-421d99c3acd1"
                 break;
             case "trio2":
-                return "1fd83ed5-fef7-47be-9a7c-cdafd7083e72"
+                return "18341ccf-b437-45e2-9ba2-04d11231dc50"
                 break;
             case "trio3":
                 return "b3aaedb1-319f-4944-ad57-623adb8e173b"
@@ -2735,16 +2735,16 @@
 
         switch (bann.value) {
             case "full1":
-                return "60ac5403-2dff-4a8a-887b-3079e6c81e6c"
+                return "a6f5c552-8dff-4d24-b84f-36157a0e5904"
                 break;
             case "triplo1":
-                return "9d1c5f7d-338c-43b0-81f5-b10fb461b1eb"
+                return "dfd3b064-7c92-49f9-8e6d-1d73977b3428"
                 break;
             case "triplo2":
-                return "9d1c5f7d-338c-43b0-81f5-b10fb461b1eb"
+                return "dfd3b064-7c92-49f9-8e6d-1d73977b3428"
                 break;
             case "triplo3":
-                return "9d1c5f7d-338c-43b0-81f5-b10fb461b1eb"
+                return "dfd3b064-7c92-49f9-8e6d-1d73977b3428"
                 break;
             case "triplo4":
                 return "8441874a-aa73-447c-abbf-1a0bc21b6b46"
