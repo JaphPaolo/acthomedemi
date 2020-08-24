@@ -871,6 +871,11 @@
                     "urlTarget": "",
                     "title": "zattini"
                 };
+                var storageBanner4 = {
+                    "urlImage": "",
+                    "urlTarget": "",
+                    "title": "zattini"
+                };
                 if (ibagemProgImg1.value === "") {
                     alert("Preencha ao menos a imagem do Banner 1");
                 } else {
@@ -885,6 +890,11 @@
                             storageBanner3.urlImage = ibagemProgImg3.value;
                             storageBanner3.urlTarget = ibagemProgUrl3.value;
                             dieizaumDeProg.data.images.push(storageBanner3);
+                            if (ibagemProgImg4.value !== "") {
+                                storageBanner4.urlImage = ibagemProgImg4.value;
+                                storageBanner4.urlTarget = ibagemProgUrl4.value;
+                                dieizaumDeProg.data.images.push(storageBanner4);
+                            }
                         }
                     }
                 }
@@ -2373,6 +2383,9 @@
                 return "be6d0a71-51c1-4282-be12-d235c38929d8"
                 break;
             case "full1c":
+                return "be6d0a71-51c1-4282-be12-d235c38929d8"
+                break;
+            case "full1d":
                 return "be6d0a71-51c1-4282-be12-d235c38929d8"
                 break;
             case "deal1":
