@@ -178,7 +178,7 @@
     }
 
     function atualizaJsonEdicaoImg() {
-        try {
+        
             if (objJson.data.type === "IMAGE_LIST") {
                 objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
                 objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
@@ -186,7 +186,7 @@
                     objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
                     objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
                 }
-                if (document.querySelector("#ibagemProgImg2").value != "") {
+                if (document.querySelector("#ibagemProgImg3").value != "") {
                     objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
                     objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
                 }
@@ -194,9 +194,6 @@
                 objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
                 objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
             }
-        } catch (e) {
-
-        }
     }
 
     function definePreencheFormularioComMenosCampos() {
