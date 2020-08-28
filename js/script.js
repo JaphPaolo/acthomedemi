@@ -178,20 +178,24 @@
     }
 
     function atualizaJsonEdicaoImg() {
-        if (objJson.data.type === "IMAGE_LIST") {
-            objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
-            objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
-            if (document.querySelector("#ibagemProgImg2").value != "") {
-                objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
-                objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
+        try {
+            if (objJson.data.type === "IMAGE_LIST") {
+                objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
+                objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
+                if (document.querySelector("#ibagemProgImg2").value != "") {
+                    objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
+                    objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
+                }
+                if (document.querySelector("#ibagemProgImg2").value != "") {
+                    objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
+                    objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
+                }
+            } else {
+                objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
+                objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
             }
-            if (document.querySelector("#ibagemProgImg2").value != "") {
-                objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
-                objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
-            }
-        } else {
-            objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
-            objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
+        } catch (e) {
+
         }
     }
 
@@ -912,14 +916,14 @@
                 if (bannereseso.value === "trio9") { dieizaumDeProg.id = "zt-home-triple-line3-rectangle-2" }
                 dieizaumDeProg.data.urlImage = ibagemProgImg.value
                 dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
-            } else if (bannereseso.value === "horizontal"){
+            } else if (bannereseso.value === "horizontal") {
                 dieizaumDeProg = infoStores.zattini.bannersProg.desktop.horizontal;
                 dieizaumDeProg.data.urlImage = ibagemProgImg.value
                 dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
             } else {
-                    dieizaumDeProg = infoStores.zattini.bannersProg.desktop.horizontal2;
-                    dieizaumDeProg.data.urlImage = ibagemProgImg.value
-                    dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
+                dieizaumDeProg = infoStores.zattini.bannersProg.desktop.horizontal2;
+                dieizaumDeProg.data.urlImage = ibagemProgImg.value
+                dieizaumDeProg.data.urlTarget = ibagemProgUrl.value
             }
 
             console.log(dieizaumDeProg);
@@ -3439,7 +3443,7 @@
                 }
             }
 
-        } else if (objJson.data.type === "IMAGE_LIST"){
+        } else if (objJson.data.type === "IMAGE_LIST") {
             objJson.data.images[defNume()].urlImage = ibagemImg.value
             objJson.data.images[defNume()].urlTarget = ibagemUrl.value
         }
