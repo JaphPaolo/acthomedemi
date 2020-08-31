@@ -178,22 +178,22 @@
     }
 
     function atualizaJsonEdicaoImg() {
-        
-            if (objJson.data.type === "IMAGE_LIST") {
-                objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
-                objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
-                if (document.querySelector("#ibagemProgImg2").value != "") {
-                    objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
-                    objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
-                }
-                if (document.querySelector("#ibagemProgImg3").value != "") {
-                    objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
-                    objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
-                }
-            } else {
-                objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
-                objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
+
+        if (objJson.data.type === "IMAGE_LIST") {
+            objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
+            objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
+            if (document.querySelector("#ibagemProgImg2").value != "") {
+                objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
+                objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
             }
+            if (document.querySelector("#ibagemProgImg3").value != "") {
+                objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
+                objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
+            }
+        } else {
+            objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
+            objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
+        }
     }
 
     function definePreencheFormularioComMenosCampos() {
@@ -1836,10 +1836,14 @@
     }
 
     function defNume() {
-        const retornaZero = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "full1", "deal1", "full1a", "botao1", "full2a", "full3a", "deal1", "triplo1", "triplo4", "horizontal"]
-        const retornaUm = ["1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "full2", "deal2", "full1b", "botao2", "full2b", "full3b", "deal2", "triplo2", "triplo5"]
-        const retornaDois = ["full3", "deal3", "full1c", "botao3", "full2c", "full3c", "deal3", "triplo3", "triplo6"]
-        const retornaTres = ["full4", "deal4", "full1d", "botao4", "full2d", "full3d", "deal4", "triplo7"]
+        const retornaZero = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "full1", "deal1", "full1a", "botao1", "full2a", "full3a", "deal1", "triplo1", "triplo4", "horizontal", "mktp1"]
+        const retornaUm = ["1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "full2", "deal2", "full1b", "botao2", "full2b", "full3b", "deal2", "triplo2", "triplo5", "mktp2"]
+        const retornaDois = ["full3", "deal3", "full1c", "botao3", "full2c", "full3c", "deal3", "triplo3", "triplo6", "mktp3"]
+        const retornaTres = ["full4", "deal4", "full1d", "botao4", "full2d", "full3d", "deal4", "triplo7", "mktp4"]
+        const retornaQuatro = ["mktp5"]
+        const retornaCinco = ["mktp6"]
+        const retornaSeis = ["mktp7"]
+        const retornaSete = ["mktp8"]
 
         if (retornaZero.includes(bannereseso.value)) {
             return 0
@@ -1852,7 +1856,19 @@
                 } else
                     if (retornaTres.includes(bannereseso.value)) {
                         return 3
-                    }
+                    } else
+                        if (retornaQuatro.includes(bannereseso.value)) {
+                            return 4
+                        } else
+                            if (retornaCinco.includes(bannereseso.value)) {
+                                return 5
+                            } else
+                                if (retornaSeis.includes(bannereseso.value)) {
+                                    return 6
+                                } else
+                                    if (retornaSete.includes(bannereseso.value)) {
+                                        return 7
+                                    }
     }
     //netshoes
     function defBannerNetshoesDesk() {
@@ -1906,6 +1922,30 @@
                 break;
             case "trio9":
                 return "542b5938-ec5c-414d-8f49-db09407b6605"
+                break;
+            case "mktp1":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp2":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp3":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp4":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp5":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp6":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp7":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
+                break;
+            case "mktp8":
+                return "2b9f9e43-e8d2-433f-9fd2-354e5cf39858"
                 break;
             case "horizontal":
                 return "e3e466a0-9b6a-4f47-947e-3ed1958addb1"
@@ -1975,6 +2015,30 @@
                 break;
             case "deal3":
                 return "5eadecb4-055c-4c95-9bf0-db656df09903"
+                break;
+            case "mktp1":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp2":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp3":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp4":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp5":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp6":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp7":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
+                break;
+            case "mktp8":
+                return "4f74b1ac-798e-4891-9b19-4b649e29c587"
                 break;
 
             default: alert("Erro! Contate a Opec!")
@@ -3413,6 +3477,7 @@
     }
 
     const naoPode = [
+        "home-gamma-sellers-list",
         "home-gamma-killers-list",
         "home-gamma-categories-list",
         "home-gamma-categories-list-line-1",
