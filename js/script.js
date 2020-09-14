@@ -136,11 +136,11 @@
             }
         });
 
-        //xhr.open("PUT", "https://aks-prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
-        //xhr.setRequestHeader("Content-Type", "application/json");
-        //xhr.setRequestHeader("cache-control", "no-cache");
-        //xhr.setRequestHeader("Postman-Token", token);
-        //xhr.send(data);
+        xhr.open("PUT", "https://aks-prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("Postman-Token", token);
+        xhr.send(data);
         console.log(data)
     }
 
