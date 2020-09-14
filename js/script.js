@@ -216,11 +216,10 @@
                 objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
                 objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
             }
+            if (document.querySelector("#ibagemProgImg4").value === "") {
+                objJson.data.images.splice(3, 1)
+            }
         } catch (e) {}
-        if (document.querySelector("#ibagemProgImg4").value === "") {
-            objJson.data.images.splice(3, 1)
-        }
-
     }
 
     function definePreencheFormularioComMenosCampos() {
