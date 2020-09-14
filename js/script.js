@@ -1,4 +1,4 @@
-(function (win) {
+(function(win) {
     /* Variables */
     var loJa = "";
     var deVice = "";
@@ -14,16 +14,16 @@
 
 
     /* Events */
-    atuBu.addEventListener("click", function () {
+    atuBu.addEventListener("click", function() {
         loadAtuOld();
     });
-    reaPr.addEventListener("click", function () {
+    reaPr.addEventListener("click", function() {
         loadProgBann();
     });
-    ediPr.addEventListener("click", function () {
+    ediPr.addEventListener("click", function() {
         loadEditProg();
     });
-    headBann.addEventListener("click", function () {
+    headBann.addEventListener("click", function() {
         goHome();
     });
 
@@ -35,27 +35,29 @@
         var storEso = document.querySelector("#storeso");
         var deviCeso = document.querySelector("#deviceso");
         var bannereSo = document.querySelector("#bannereseso");
-        storEso.addEventListener("change", function () { enabFie() });
-        deviCeso.addEventListener("change", function () { enabFie() });
-        bannereSo.addEventListener("change", function () { fazGetModDesk() });
+        storEso.addEventListener("change", function() { enabFie() });
+        deviCeso.addEventListener("change", function() { enabFie() });
+        bannereSo.addEventListener("change", function() { fazGetModDesk() });
     }
+
     function loadProgBann() {
         tipRqu = "Programar"
         mainDiv.innerHTML = infoStores.atuForma;
         var storEso = document.querySelector("#storeso");
         var deviCeso = document.querySelector("#deviceso");
         var bannereSo = document.querySelector("#bannereseso");
-        storEso.addEventListener("change", function () { enabFie() });
-        deviCeso.addEventListener("change", function () { enabFie() });
-        bannereSo.addEventListener("change", function () { geraCamposProg() });
+        storEso.addEventListener("change", function() { enabFie() });
+        deviCeso.addEventListener("change", function() { enabFie() });
+        bannereSo.addEventListener("change", function() { geraCamposProg() });
     }
+
     function loadEditProg() {
         tipRqu = "EditProg"
         mainDiv.innerHTML = infoStores.editForma;
         var idBann = document.querySelector("#idDoBanner");
         var butCons = document.querySelector("#buttEditCons");
-        idBann.addEventListener("change", function () { consultaBanner() });
-        butCons.addEventListener("click", function () { defineType() });
+        idBann.addEventListener("change", function() { consultaBanner() });
+        butCons.addEventListener("click", function() { defineType() });
     }
 
     function consultaBanner() {
@@ -63,7 +65,7 @@
         var data = null;
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
+        xhr.addEventListener("readystatechange", function() {
             if (this.readyState === 4 && this.status === 200) {
                 console.log("DEU CERTO o get PORRA!");
                 objJson = JSON.parse(this.responseText);
@@ -106,8 +108,12 @@
             document.querySelector("#ibagemProgImg3").value = objJson.data.images[2].urlImage;
             document.querySelector("#ibagemProgUrl3").value = objJson.data.images[2].urlTarget;
         }
+        if (objJson.data.images[3] != undefined) {
+            document.querySelector("#ibagemProgImg4").value = objJson.data.images[3].urlImage;
+            document.querySelector("#ibagemProgUrl4").value = objJson.data.images[3].urlTarget;
+        }
 
-        buttPreProg.addEventListener("click", function () {
+        buttPreProg.addEventListener("click", function() {
             fazPutEditProg();
         })
     }
@@ -123,18 +129,18 @@
         var data = JSON.stringify(objJson);
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
+        xhr.addEventListener("readystatechange", function() {
             if (this.readyState === 4 && this.status === 200) {
                 console.log("Deu certo a PUTA.. digo o PUT Porra!")
                 alert("BANNER ATUALIZADO COM SUCESSO!");
             }
         });
 
-        xhr.open("PUT", "https://aks-prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("Postman-Token", token);
-        xhr.send(data);
+        //xhr.open("PUT", "https://aks-prd-ingress.netshoes.io/banner/admin/" + objJson.uuid);
+        //xhr.setRequestHeader("Content-Type", "application/json");
+        //xhr.setRequestHeader("cache-control", "no-cache");
+        //xhr.setRequestHeader("Postman-Token", token);
+        //xhr.send(data);
         console.log(data)
     }
 
@@ -179,21 +185,42 @@
 
     function atualizaJsonEdicaoImg() {
 
-        if (objJson.data.type === "IMAGE_LIST") {
-            objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
-            objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
-            if (document.querySelector("#ibagemProgImg2").value != "") {
-                objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
-                objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
+        try {
+            if (objJson.data.type === "IMAGE_LIST") {
+                objJson.data.images[0].urlImage = document.querySelector("#ibagemProgImg1").value;
+                objJson.data.images[0].urlTarget = document.querySelector("#ibagemProgUrl1").value;
+                if (document.querySelector("#ibagemProgImg2").value != "") {
+                    objJson.data.images[1].urlImage = document.querySelector("#ibagemProgImg2").value;
+                    objJson.data.images[1].urlTarget = document.querySelector("#ibagemProgUrl2").value;
+                }
+                if (document.querySelector("#ibagemProgImg3").value != "") {
+                    objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
+                    objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
+                }
+                if (objJson.id.includes("full-top-0") && !objJson.data.images[3] && document.querySelector("#ibagemProgImg3").value != "") {
+                    var imagesFinal = objJson.data.images
+                    var urlImage = document.querySelector("#ibagemProgImg4").value;
+                    var urlTarget = document.querySelector("#ibagemProgUrl4").value;
+                    var novoObj = {
+                        urlImage,
+                        urlTarget,
+                        "title": "-"
+                    }
+                    imagesFinal.push(novoObj)
+                }
+                if (document.querySelector("#ibagemProgImg4").value != "") {
+                    objJson.data.images[3].urlImage = document.querySelector("#ibagemProgImg4").value;
+                    objJson.data.images[3].urlTarget = document.querySelector("#ibagemProgUrl4").value;
+                }
+            } else {
+                objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
+                objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
             }
-            if (document.querySelector("#ibagemProgImg3").value != "") {
-                objJson.data.images[2].urlImage = document.querySelector("#ibagemProgImg3").value;
-                objJson.data.images[2].urlTarget = document.querySelector("#ibagemProgUrl3").value;
-            }
-        } else {
-            objJson.data.urlImage = document.querySelector("#ibagemProgImg").value;
-            objJson.data.urlTarget = document.querySelector("#ibagemProgUrl").value;
+        } catch (e) {}
+        if (document.querySelector("#ibagemProgImg4").value === "") {
+            objJson.data.images.splice(3, 1)
         }
+
     }
 
     function definePreencheFormularioComMenosCampos() {
@@ -213,7 +240,7 @@
         document.querySelector("#horafim").value = objJson.criteria.endDate.split("T")[1].split(":")[0] + ":" + objJson.criteria.endDate.split("T")[1].split(":")[1];
         document.querySelector("#ibagemProgImg").value = objJson.data.urlImage;
         document.querySelector("#ibagemProgUrl").value = objJson.data.urlTarget;
-        buttPreProg.addEventListener("click", function () {
+        buttPreProg.addEventListener("click", function() {
             fazPutEditProg();
         })
     }
@@ -257,7 +284,7 @@
             dJossa.innerHTML = infoStores.deskProgFormaComList
         } else { dJossa.innerHTML = infoStores.deskProgFormaSemList }
 
-        buttPreProg.addEventListener("click", function () {
+        buttPreProg.addEventListener("click", function() {
             fazPostProg();
         })
     }
@@ -1685,7 +1712,7 @@
         var datlokoa = progjson;
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
+        xhr.addEventListener("readystatechange", function() {
             if (this.readyState === 4 && this.status === 201) {
                 console.log(this.responseText);
                 var logues = JSON.parse(this.responseText)
@@ -1758,7 +1785,7 @@
         var data = null;
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
+        xhr.addEventListener("readystatechange", function() {
             if (this.readyState === 4 && this.status === 200) {
                 console.log("DEU CERTO o get PORRA!");
                 objJson = JSON.parse(this.responseText);
@@ -1771,7 +1798,7 @@
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
         xhr.send(data);
-        botaoPre.addEventListener("click", function () {
+        botaoPre.addEventListener("click", function() {
             habilitaAtualiza();
         })
     }
@@ -1821,18 +1848,17 @@
                 ibagemUrl.value = objJson.data.urlTarget
             }
         } else
-            if (objJson.data.type === "IMAGE_LIST") {
-                imagem.setAttribute("src", objJson.data.images[defNume()].urlImage)
-                link.setAttribute("href", objJson.data.images[defNume()].urlTarget)
-                ibagemImg.value = objJson.data.images[defNume()].urlImage
-                ibagemUrl.value = objJson.data.images[defNume()].urlTarget
-            }
-            else {
-                imagem.setAttribute("src", objJson.data.urlImage)
-                link.setAttribute("href", objJson.data.urlTarget)
-                ibagemImg.value = objJson.data.urlImage
-                ibagemUrl.value = objJson.data.urlTarget
-            }
+        if (objJson.data.type === "IMAGE_LIST") {
+            imagem.setAttribute("src", objJson.data.images[defNume()].urlImage)
+            link.setAttribute("href", objJson.data.images[defNume()].urlTarget)
+            ibagemImg.value = objJson.data.images[defNume()].urlImage
+            ibagemUrl.value = objJson.data.images[defNume()].urlTarget
+        } else {
+            imagem.setAttribute("src", objJson.data.urlImage)
+            link.setAttribute("href", objJson.data.urlTarget)
+            ibagemImg.value = objJson.data.urlImage
+            ibagemUrl.value = objJson.data.urlTarget
+        }
     }
 
     function defNume() {
@@ -1848,27 +1874,27 @@
         if (retornaZero.includes(bannereseso.value)) {
             return 0
         } else
-            if (retornaUm.includes(bannereseso.value)) {
-                return 1
-            } else
-                if (retornaDois.includes(bannereseso.value)) {
-                    return 2
-                } else
-                    if (retornaTres.includes(bannereseso.value)) {
-                        return 3
-                    } else
-                        if (retornaQuatro.includes(bannereseso.value)) {
-                            return 4
-                        } else
-                            if (retornaCinco.includes(bannereseso.value)) {
-                                return 5
-                            } else
-                                if (retornaSeis.includes(bannereseso.value)) {
-                                    return 6
-                                } else
-                                    if (retornaSete.includes(bannereseso.value)) {
-                                        return 7
-                                    }
+        if (retornaUm.includes(bannereseso.value)) {
+            return 1
+        } else
+        if (retornaDois.includes(bannereseso.value)) {
+            return 2
+        } else
+        if (retornaTres.includes(bannereseso.value)) {
+            return 3
+        } else
+        if (retornaQuatro.includes(bannereseso.value)) {
+            return 4
+        } else
+        if (retornaCinco.includes(bannereseso.value)) {
+            return 5
+        } else
+        if (retornaSeis.includes(bannereseso.value)) {
+            return 6
+        } else
+        if (retornaSete.includes(bannereseso.value)) {
+            return 7
+        }
     }
     //netshoes
     function defBannerNetshoesDesk() {
@@ -1963,10 +1989,12 @@
                 return "f837531c-e8a2-4e68-8c50-4e29d2d341a8"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2041,10 +2069,12 @@
                 return "4f74b1ac-798e-4891-9b19-4b649e29c587"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesApp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2068,10 +2098,12 @@
                 return "e46f639b-92db-40f4-9c76-1fffbc9343cb"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesPromoapp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2095,10 +2127,12 @@
                 return "6ee89a5e-4944-49d1-a657-78fdfc5b7c99"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesAppblack() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2177,7 +2211,8 @@
                 break;
 
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2240,11 +2275,12 @@
             case "9b":
                 return "7c52c131-a4ec-4ecb-945c-c95820ca1836"
                 break;
-            // case "10":
-            //     return ""
-            //     break;
+                // case "10":
+                //     return ""
+                //     break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2318,7 +2354,8 @@
                 return
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2376,7 +2413,8 @@
                 return "5d5d9e635e7f921dba6e4150"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2431,10 +2469,11 @@
                 return "5d5d9e625e7f921dba6e40e6"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
-    }//topmenu clubens
+    } //topmenu clubens
 
     //zattini
     function defBannerZattiniDesk() {
@@ -2509,10 +2548,12 @@
                 return "07a5216c-b67e-4e56-99e4-0068aa9d4ace"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerZattiniMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2557,10 +2598,12 @@
                 return "258ec733-2edf-43dd-84dd-b442e04d3365"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerZattiniApp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2584,10 +2627,12 @@
                 return "20aff126-ee05-473e-8ed2-eea56def0fdf"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerZattiniPromoapp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2614,10 +2659,12 @@
                 return "29b080e2-887f-46ad-9e0e-7829588f21a7"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerZattiniAppblack() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2696,7 +2743,8 @@
                 break;
 
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2730,7 +2778,8 @@
                 return "25010494-528d-4ab4-b49e-707f50639641"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2804,10 +2853,12 @@
                 return "15ab87f5-4452-42d9-8d39-e8fa42928db9"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesarMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2837,10 +2888,12 @@
                 return "60194af1-71ee-447c-b576-9e3419a32a0e"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesarApp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2858,10 +2911,12 @@
                 return "cd06f0c5-c7ba-424f-9bb7-7c47d8f71eff"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesarPromoapp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2891,10 +2946,12 @@
                 return "a92bf8df-33b0-45b0-b3c8-a0d2a8b2b33e"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesarAppblack() {
         var bann = document.querySelector("#bannereseso");
 
@@ -2912,7 +2969,8 @@
                 return "a1f646b1-cf71-48c8-8c4f-5096d0f4bdd3"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -2974,10 +3032,12 @@
                 return "341096ac-1976-4b60-9484-e3c8cfcf3b19"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesmxMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3019,10 +3079,12 @@
                 return "15ece4ef-29fa-447d-b08b-8a425992d157"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesmxApp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3040,10 +3102,12 @@
                 return "01acb4a0-b523-4e33-8fce-c8cc50ec33ea"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesmxPromoapp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3061,10 +3125,12 @@
                 return "3624e4ab-1be5-41ab-9cd2-edff6f92bae9"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerNetshoesmxAppblack() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3082,7 +3148,8 @@
                 return "53f873ee-db3f-4e77-b204-c0c67f194e13"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -3135,10 +3202,12 @@
                 return "f0541e92-108d-481f-9924-592fa770b2ba"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerShoestockMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3171,10 +3240,12 @@
                 return "ba2512c4-8aac-42d4-a1ce-b93753fc94a2"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerShoestockApp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3201,10 +3272,12 @@
                 return "27fbc1c7-8790-48ce-b0d6-0dc6ba1c1f5e"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerShoestockPromoapp() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3231,10 +3304,12 @@
                 return "30dc3139-9edc-4d00-ab44-957d3f2d0201"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerShoestockAppblack() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3313,7 +3388,8 @@
                 break;
 
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -3339,10 +3415,12 @@
                 return "41120ac9-bd93-4291-a270-7fffb81c4bfd"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
+
     function defBannerFreelaceMob() {
         var bann = document.querySelector("#bannereseso");
 
@@ -3363,7 +3441,8 @@
                 return "fce5a4e1-5f5a-4fe6-9936-1e53919b9679"
                 break;
 
-            default: alert("Erro! Contate a Opec!")
+            default:
+                alert("Erro! Contate a Opec!")
                 break;
         }
     }
@@ -3371,7 +3450,7 @@
 
 
     //Define lojas, banners e devices.
-    function defineTudoNessaPorra() {//defBannerNetshoesTopMenu
+    function defineTudoNessaPorra() { //defBannerNetshoesTopMenu
         if (storeso.value === "netshoes" && deviceso.value === "desktop") {
             return defBannerNetshoesDesk();
         } else if (storeso.value === "netshoes" && deviceso.value === "mobile") {
@@ -3444,10 +3523,11 @@
     function habilitaAtualiza() {
         atualizaImagem();
         buttAtu.disabled = false;
-        buttAtu.addEventListener("click", function () {
+        buttAtu.addEventListener("click", function() {
             fazPut();
         })
     }
+
     function atualizaImagem() {
         var imagem = document.querySelector(".ibagem a img")
         var link = document.querySelector(".ibagem a")
@@ -3461,14 +3541,13 @@
                 link.setAttribute("href", objJson.data.urlTarget)
             }
         } else
-            if (objJson.data.type === "IMAGE_LIST") {
-                imagem.setAttribute("src", ibagemImg.value)
-                link.setAttribute("href", ibagemUrl.value)
-            }
-            else {
-                imagem.setAttribute("src", ibagemImg.value)
-                link.setAttribute("href", ibagemUrl.value)
-            }
+        if (objJson.data.type === "IMAGE_LIST") {
+            imagem.setAttribute("src", ibagemImg.value)
+            link.setAttribute("href", ibagemUrl.value)
+        } else {
+            imagem.setAttribute("src", ibagemImg.value)
+            link.setAttribute("href", ibagemUrl.value)
+        }
         atualizaJson();
     }
 
@@ -3493,7 +3572,8 @@
             var urlImage = ibagemImg.value
             var urlTarget = ibagemUrl.value
             var novoObj = {
-                urlImage, urlTarget
+                urlImage,
+                urlTarget
             }
             if (urlImage != "" && !objJson.data.images[defNume()]) {
                 imagesFinal.push(novoObj)
@@ -3508,8 +3588,7 @@
         } else if (objJson.data.type === "IMAGE_LIST") {
             objJson.data.images[defNume()].urlImage = ibagemImg.value
             objJson.data.images[defNume()].urlTarget = ibagemUrl.value
-        }
-        else {
+        } else {
             objJson.data.urlImage = ibagemImg.value
             objJson.data.urlTarget = ibagemUrl.value
         }
@@ -3520,7 +3599,7 @@
         var data = JSON.stringify(objJson);
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
+        xhr.addEventListener("readystatechange", function() {
             if (this.readyState === 4 && this.status === 200) {
                 console.log("Deu certo a PUTA.. digo o PUT Porra!")
                 alert("BANNER ATUALIZADO COM SUCESSO!");
