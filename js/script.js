@@ -3519,12 +3519,39 @@
 
     }
 
+    getCookie = (cName) => {
+        const name = cName + "=";
+        const cDecoded = decodeURIComponent(document.cookie)
+        const cArr = cDecoded.split('; ')
+        let res
+        cArr.forEach(val => {
+            if (val.indexOf(name) === 0) res = val.substring(name.length)
+        })
+        return res
+    }
+
     function habilitaAtualiza() {
+        let hasCookie = document.cookie.match(/^(.*;)?\s*authToken\s*=\s*[^;]+(.*)?$/)
+        let authForm = document.getElementById('authForm')
         atualizaImagem();
         buttAtu.disabled = false;
         buttAtu.addEventListener("click", function() {
-            fazPut();
+            let authCookie = 'authToken'
+            if (!hasCookie) {
+                authForm.style.display = 'flex'
+            } else {
+                fazPut(getCookie(authCookie))
+            }
         })
+    }
+
+    cancelAuth = () => {
+        let inptUsr = document.getElementById("inputUser")
+        let pw = document.getElementById("inputPw")
+        authForm = document.getElementById('authForm')
+        inptUsr.value = ''
+        pw.value = ''
+        authForm.style.display = 'none'
     }
 
     function atualizaImagem() {
@@ -3594,7 +3621,43 @@
         console.log(objJson)
     }
 
-    function fazPut() {
+
+    generateToken = () => {
+        let usr = document.getElementById("inputUser").value
+        let pw = document.getElementById("inputPw").value
+        let data = JSON.stringify({ "login": usr, "password": pw });
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === 4) {
+                let resp = JSON.parse(this.responseText)
+                if (resp.status) {
+                    alert('Usuário ou Senha incorretos!')
+                } else {
+                    let authToken = resp.access_token
+                    setCookie(authToken)
+                    cancelAuth()
+                    fazPut(authToken)
+                }
+            }
+        });
+
+        xhr.open("POST", "https://aks-prd-ingress.netshoes.io/admin-proxy/login");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(data);
+    }
+
+    setStorage = (token) => {
+        localStorage.token = token
+    }
+
+    setCookie = (token) => {
+        document.cookie = "authToken =" + token + "; max-age =" + 15 * 60
+    }
+
+    function fazPut(authToken) {
         var data = JSON.stringify(objJson);
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -3609,6 +3672,7 @@
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
+        xhr.setRequestHeader("Authorization", "Bearer " + authToken);
         xhr.send(data);
         buttAtu.disabled = true;
     }

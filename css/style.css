@@ -2,7 +2,8 @@ html {
     background-color: #a5d4db;
     font-family: 'Varela Round', sans-serif !important;
 }
-body{
+
+body {
     width: 1023px;
     margin: auto;
     background-color: #a5d4db;
@@ -13,7 +14,7 @@ header h1:hover {
 }
 
 header {
-   margin: 20px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     /* background-color: gray; */
@@ -28,7 +29,7 @@ header h1 {
 }
 
 .grid {
-	display: grid;
+    display: grid;
 }
 
 .grid-auto-flow-1 {
@@ -42,21 +43,20 @@ header h1 {
     margin-bottom: 15px;
 }
 
-.item {   
+.item {
     font-family: 'Varela Round', sans-serif !important;
     display: grid;
     border: solid 3px #556671;
     border-radius: 5px;
-	margin: 15px;
-	/* background: tomato; */
-	text-align: center;
+    margin: 15px;
+    /* background: tomato; */
+    text-align: center;
     font-size: 1.2em;
     max-height: 200px;
     transition: background-color .7s;
-    align-items: center;    
+    align-items: center;
     color: #222222;
     height: 80px;
-
 }
 
 .item:hover {
@@ -67,36 +67,34 @@ header h1 {
 .selecitem {
     font-family: 'Varela Round', sans-serif !important;
     display: grid;
-
-	/* background: tomato; */
-	text-align: center;
+    /* background: tomato; */
+    text-align: center;
     font-size: 1.2em;
-    max-height: 200px;  
+    max-height: 200px;
     height: 74px;
     rotate: 90;
 }
-  
-  .selectdiv:after {
-      content: '\f078';
-      font: normal normal normal 19px/1 FontAwesome;
-      color: #556671;
-      right: 55px;
-      top: 19px;
-      height: 70px;
-      padding: 26px 0px 0px 18px;
 
-      position: absolute;
-      pointer-events: none;
-  }
-  
-  /* IE11 hide native button (thanks Matt!) */
-  select::-ms-expand {
-  display: none;
-  }
-  
+.selectdiv:after {
+    content: '\f078';
+    font: normal normal normal 19px/1 FontAwesome;
+    color: #556671;
+    right: 55px;
+    top: 19px;
+    height: 70px;
+    padding: 26px 0px 0px 18px;
+    position: absolute;
+    pointer-events: none;
+}
 
 
-  .selectdiv select {
+/* IE11 hide native button (thanks Matt!) */
+
+select::-ms-expand {
+    display: none;
+}
+
+.selectdiv select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -115,15 +113,13 @@ header h1 {
     border: 1px solid #556671;
     -ms-word-break: normal;
     word-break: normal;
-  }
+}
 
-  .selectdiv select:disabled {
+.selectdiv select:disabled {
     background-color: #a5d4db;
-  }
+}
 
-
-
-  .selectdivs:after {
+.selectdivs:after {
     /* content: '\f078';
     font: normal normal normal 19px/1 FontAwesome; */
     color: #556671;
@@ -131,80 +127,83 @@ header h1 {
     top: 19px;
     height: 70px;
     padding: 26px 0px 0px 18px;
-
     position: absolute;
     pointer-events: none;
 }
 
+
 /* IE11 hide native button (thanks Matt!) */
+
 select::-ms-expand {
-display: none;
+    display: none;
 }
 
-
-
 .selectdivs select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  /* Add some styling */
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  height: 74px;
-  border: 3px solid #556671;
-  padding: 0px 20px;
-  font-size: 1.2em;
-  line-height: 1.75;
-  color: #333;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #556671;
-  -ms-word-break: normal;
-  word-break: normal;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 74px;
+    border: 3px solid #556671;
+    padding: 0px 20px;
+    font-size: 1.2em;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #556671;
+    -ms-word-break: normal;
+    word-break: normal;
 }
 
 .selectdivs select:disabled {
-  background-color: #a5d4db;
+    background-color: #a5d4db;
 }
 
-  .ibagem {
-      margin-top: 50px;
-      width: 1024px;
-  }
-  .ibagem img {
-      z-index: 1;
-      max-width: 1014px;
-      max-height: 500px;
+.ibagem {
+    margin-top: 50px;
+    width: 1024px;
+}
 
-      border: 5px solid white;
-  }
+.ibagem img {
+    z-index: 1;
+    max-width: 1014px;
+    max-height: 500px;
+    border: 5px solid white;
+}
 
-  .acampBut {
-      
-      width: 1024px;
-  }
-  .inputP {
-      width: 1024px;
-      margin-top: 15px;
-      margin-bottom: 5px;
+.acampBut {
+    width: 1024px;
+}
+
+.inputP {
+    width: 1024px;
+    margin-top: 15px;
+    margin-bottom: 5px;
     height: 50px;
     background-color: #cdebf0;
-      border: solid 3px #556671;
-      padding: 0px 20px;
-      font-size: 1.2em;
+    border: solid 3px #556671;
+    padding: 0px 20px;
+    font-size: 1.2em;
+}
 
-  }
-  .buttonsss{
-      display: flex;
-      justify-content: space-between;
-  }
+.buttonsss {
+    display: flex;
+    justify-content: space-between;
+}
 
-  #buttPre,#buttEditCons, #buttAtu, #buttPreProg, #buttProg {
+#buttPre,
+#buttEditCons,
+#buttAtu,
+#buttPreProg,
+#buttProg {
     width: 500px;
     margin: 15px 15px;
-  height: 50px;
-  background-color: #556671;
+    height: 50px;
+    background-color: #556671;
     border: solid 3px #556671;
     padding: 0px 20px;
     font-size: 1.2em;
@@ -212,10 +211,13 @@ display: none;
     color: white
 }
 
-#buttAtu:disabled, #buttProg:disabled, #buttPreProg:disabled {
+#buttAtu:disabled,
+#buttProg:disabled,
+#buttPreProg:disabled {
     background-color: #84a3b8;
     color: rgb(196, 191, 191);
 }
+
 .escondida {
     display: none;
 }
@@ -228,13 +230,14 @@ display: none;
     margin-top: 15px;
     font-weight: bold;
 }
+
 .datasPo {
-    width: 220px;      
-      margin-bottom: 5px;
+    width: 220px;
+    margin-bottom: 5px;
     height: 50px;
     background-color: #cdebf0;
-      border: solid 3px #556671;      
-      font-size: 1.2em;
+    border: solid 3px #556671;
+    font-size: 1.2em;
 }
 
 .dataHoras {
@@ -242,7 +245,8 @@ display: none;
     padding-bottom: 10px;
     padding-top: 10px;
 }
-.divideAsHoras{
+
+.divideAsHoras {
     display: flex;
     width: 600px;
     justify-content: space-between;
@@ -253,10 +257,11 @@ display: none;
     margin-top: 40px;
 }
 
-.pAntesDoUuid{
+.pAntesDoUuid {
     font-size: 15px;
     font-weight: bold;
 }
+
 .uuidProg {
     font-size: 24px;
     font-weight: bold;
@@ -279,8 +284,31 @@ display: none;
     top: 19px;
     height: 70px;
     padding: 26px 0px 0px 18px;
-
     position: absolute;
     pointer-events: none;
 }
 
+div#authForm {
+    width: 100%;
+    height: 125%;
+    position: absolute;
+    z-index: 10000000000;
+    justify-content: center;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    background: #0000007a;
+}
+
+.login {
+    margin-top: 150px;
+    width: 400px;
+    padding: 22px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0.5em #000;
+}
+
+button#btAuth {
+    float: right;
+}
