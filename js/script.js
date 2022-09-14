@@ -114,7 +114,13 @@
         }
 
         buttPreProg.addEventListener("click", function() {
-            fazPutEditProg();
+            let hasCookie = document.cookie.match(/^(.*;)?\s*authToken\s*=\s*[^;]+(.*)?$/)
+            let authCookie = 'authToken'
+            if (!hasCookie) {
+                authForm.style.display = 'flex'
+            } else {
+                fazPutEditProg(getCookie(authCookie))
+            }
         })
     }
 
@@ -122,7 +128,7 @@
 
 
 
-    function fazPutEditProg() {
+    function fazPutEditProg(authToken) {
         atualizaJsonDeEdicaoIn();
         atualizaJsonDeEdicaoFi();
         atualizaJsonEdicaoImg();
@@ -140,6 +146,7 @@
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Postman-Token", token);
+        xhr.setRequestHeader("Authorization", "Bearer " + authToken)
         xhr.send(data);
         console.log(data)
     }
@@ -240,7 +247,13 @@
         document.querySelector("#ibagemProgImg").value = objJson.data.urlImage;
         document.querySelector("#ibagemProgUrl").value = objJson.data.urlTarget;
         buttPreProg.addEventListener("click", function() {
-            fazPutEditProg();
+            let hasCookie = document.cookie.match(/^(.*;)?\s*authToken\s*=\s*[^;]+(.*)?$/)
+            let authCookie = 'authToken'
+            if (!hasCookie) {
+                authForm.style.display = 'flex'
+            } else {
+                fazPutEditProg(getCookie(authCookie))
+            }
         })
     }
 
@@ -3639,6 +3652,33 @@
                     setCookie(authToken)
                     cancelAuth()
                     fazPut(authToken)
+                }
+            }
+        });
+
+        xhr.open("POST", "https://aks-prd-ingress.netshoes.io/admin-proxy/login");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(data);
+    }
+
+    generatePutToken = () => {
+        let usr = document.getElementById("inputUser").value
+        let pw = document.getElementById("inputPw").value
+        let data = JSON.stringify({ "login": usr, "password": pw });
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === 4) {
+                let resp = JSON.parse(this.responseText)
+                if (resp.status) {
+                    alert('Usuário ou Senha incorretos!')
+                } else {
+                    let authToken = resp.access_token
+                    setCookie(authToken)
+                    cancelAuth()
+                    fazPutEditProg(authToken)
                 }
             }
         });
